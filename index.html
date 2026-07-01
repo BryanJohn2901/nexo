@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexo Digital — Agência de Marketing & Automação</title>
+  <meta name="description" content="Conectamos estratégia, dados e automação para escalar negócios. Tráfego pago, CRM, funis e muito mais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['attribute', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg:           '#0B0D11',
+              surface:      '#222A31',
+              primary:      '#D9FF6A',
+              primaryHover: '#E8FEAE',
+              accent:       '#E8FEAE',
+              textPrimary:  '#D8DEE3',
+              textSecondary:'#7B8793',
+              textMuted:    '#7B8793',
+              border:       '#7B8793',
+            },
+          },
+          fontFamily: { sans: ['Inter','sans-serif'], display: ['Inter','sans-serif'] },
+          maxWidth: { site: '1300px', 'site-md': '1040px', 'site-sm': '860px' },
+          borderRadius: { xl: '20px', '2xl': '28px', '3xl': '36px' },
+          boxShadow: {
+            card: '0 4px 24px rgba(0,0,0,.30)',
+            'card-hover': '0 8px 32px rgba(0,0,0,.40)',
+            glow: '0 0 32px rgba(217,255,106,.25)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --brand-bg:#0B0D11; --brand-surface:#222A31; --brand-primary:#D9FF6A;
+      --brand-text:#D8DEE3; --brand-muted:#7B8793;
+    }
+    [data-theme="light"] {
+      --brand-bg:#D8DEE3; --brand-surface:#EDEFF1; --brand-primary:#D9FF6A;
+      --brand-text:#0B0D11; --brand-muted:#222A31;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--brand-bg); color: var(--brand-text); }
+
+    /* ── TEXT FADE ── */
+    .text-fade {
+      background: linear-gradient(90deg,#D8DEE3 0%,#D8DEE3 55%,rgba(216,222,227,.18) 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .text-fade-v {
+      background: linear-gradient(180deg,#D8DEE3 0%,rgba(216,222,227,.2) 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    /* ── STAT STROKE ── */
+    .stat-stroke { font-weight:800; -webkit-text-stroke:1.5px #D9FF6A; color:transparent; }
+
+    /* ── ICON BADGE ── */
+    .icon-badge {
+      width:56px; height:56px; border-radius:16px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(217,255,106,.06); border:1px solid rgba(217,255,106,.35);
+      color:#D9FF6A; font-size:20px;
+    }
+    .icon-badge-lg {
+      width:72px; height:72px; border-radius:20px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(217,255,106,.08); border:1px solid rgba(217,255,106,.4);
+      color:#D9FF6A; font-size:28px;
+    }
+
+    /* ── CARD LIFT ── */
+    .card-lift { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-lift:hover { transform:translateY(-6px); box-shadow:0 8px 32px rgba(0,0,0,.4); }
+
+    /* ── SPLIT BTN ── */
+    .split-btn .btn-icon { transition: transform .25s ease; }
+    .split-btn:hover .btn-icon { transform: scale(1.12); }
+
+    /* ── TAG PILL ── */
+    .tag-pill {
+      font-size:11px; padding:4px 12px; border-radius:999px;
+      border:1px solid rgba(217,255,106,.35); color:#D8DEE3;
+      background:rgba(11,13,17,.55); backdrop-filter:blur(4px);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap { overflow:hidden; }
+    .marquee-track {
+      display:flex; gap:4rem; width:max-content;
+      animation: marquee-scroll 32s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state:paused; }
+    @keyframes marquee-scroll {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+
+    /* ── GRADIENT RULE ── */
+    .gradient-rule { height:1px; background:linear-gradient(90deg,transparent,rgba(217,255,106,.3),transparent); }
+
+    /* ── GLASS ── */
+    .glass { background:rgba(11,13,17,.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+
+    /* ── HERO BG ── */
+    .hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(217,255,106,.07) 0%, transparent 65%),
+                  radial-gradient(ellipse 60% 50% at 20% 70%, rgba(217,255,106,.04) 0%, transparent 60%),
+                  linear-gradient(135deg,#0F1520 0%,#0B0D11 50%,#101420 100%);
+    }
+
+    /* ── FLOATING ANIMATIONS ── */
+    @keyframes float-a { 0%,100%{transform:translateY(0) rotate(0deg)} 40%{transform:translateY(-22px) rotate(4deg)} 70%{transform:translateY(-12px) rotate(-2deg)} }
+    @keyframes float-b { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-28px)} }
+    @keyframes float-c { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-16px) scale(1.04)} }
+    @keyframes glow-pulse { 0%,100%{opacity:.25;transform:scale(1)} 50%{opacity:.55;transform:scale(1.12)} }
+    @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes spin-rev  { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+    @keyframes fade-up   { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes border-glow { 0%,100%{box-shadow:0 0 18px rgba(217,255,106,.1)} 50%{box-shadow:0 0 36px rgba(217,255,106,.28)} }
+    @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+    @keyframes count-in { from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
+
+    .float-a { animation:float-a 9s ease-in-out infinite; }
+    .float-b { animation:float-b 6s ease-in-out infinite; }
+    .float-c { animation:float-c 4.5s ease-in-out infinite; }
+    .glow-pulse { animation:glow-pulse 3s ease-in-out infinite; }
+    .spin-slow  { animation:spin-slow 22s linear infinite; }
+    .spin-rev   { animation:spin-rev  18s linear infinite; }
+
+    .hero-line-1 { animation:fade-up .7s .1s ease-out both; }
+    .hero-line-2 { animation:fade-up .7s .3s ease-out both; }
+    .hero-line-3 { animation:fade-up .7s .5s ease-out both; }
+    .hero-line-4 { animation:fade-up .7s .7s ease-out both; }
+    .hero-line-5 { animation:fade-up .7s .9s ease-out both; }
+
+    /* ── GRADIENT BORDER CARD ── */
+    .glow-card { animation:border-glow 3.5s ease-in-out infinite; }
+
+    /* ── SHINE ON HOVER ── */
+    .shine-card { position:relative; overflow:hidden; }
+    .shine-card::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(105deg,transparent 35%,rgba(217,255,106,.04) 50%,transparent 65%);
+      transform:translateX(-100%); transition:transform .55s ease;
+    }
+    .shine-card:hover::after { transform:translateX(100%); }
+
+    /* ── PILL BADGE (eyebrow) ── */
+    .eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.8rem; font-weight:600; color:#D9FF6A; margin-bottom:.75rem; }
+
+    /* ── CHECKLIST ITEM ── */
+    .check-item { display:flex; align-items:center; gap:.75rem; font-size:.875rem; color:#D8DEE3; }
+    .check-dot { width:20px; height:20px; border-radius:50%; border:1px solid #D9FF6A; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+    /* ── FAQ ── */
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s ease; }
+    .faq-item.open .faq-answer { max-height:280px; }
+    .faq-icon { transition:transform .3s ease; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+
+    /* ── MOBILE FLOAT ── */
+    .mobile-float {
+      position:fixed; bottom:0; left:0; right:0; z-index:50;
+      padding:1rem 1.5rem; background:rgba(11,13,17,.96);
+      backdrop-filter:blur(12px); border-top:1px solid rgba(217,255,106,.2);
+    }
+
+    /* ── STICKY HEADER ── */
+    #main-header { position:sticky; top:0; z-index:40; transition:background .3s,border .3s; }
+    #main-header.scrolled { background:rgba(11,13,17,.97) !important; border-bottom-color:rgba(217,255,106,.18) !important; }
+
+    /* ── MOBILE MENU ── */
+    #mobile-menu { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+    #mobile-menu.open { max-height:700px; }
+    #mob-services-sub { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    #mob-services-sub.open { max-height:440px; }
+    #mob-services-chevron { transition:transform .3s ease; }
+    #mob-services-chevron.open { transform:rotate(180deg); }
+
+    /* ── MEGA MENU ── */
+    .mega-trigger { position:relative; }
+    .mega-menu-wrap {
+      position:absolute; top:calc(100% + 1.25rem); left:50%;
+      transform:translateX(-50%) translateY(14px);
+      width:820px; opacity:0; visibility:hidden;
+      transition:opacity .25s ease, transform .25s ease, visibility .25s;
+      z-index:200;
+    }
+    .mega-trigger:hover .mega-menu-wrap { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+    .mega-menu-arrow {
+      position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg);
+      width:12px; height:12px; background:#222A31;
+      border-left:1px solid rgba(217,255,106,.2); border-top:1px solid rgba(217,255,106,.2);
+    }
+    .mega-service-item {
+      display:flex; align-items:flex-start; gap:.75rem; padding:.85rem 1rem;
+      border-radius:14px; transition:background .2s; text-decoration:none;
+    }
+    .mega-service-item:hover { background:rgba(217,255,106,.06); }
+    .mega-service-item:hover .mega-icon { background:rgba(217,255,106,.15); }
+    .mega-icon {
+      width:40px; height:40px; border-radius:10px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(217,255,106,.07); border:1px solid rgba(217,255,106,.25);
+      color:#D9FF6A; font-size:15px; transition:background .2s;
+    }
+    .nav-link { display:flex; align-items:center; gap:6px; }
+    .nav-icon { color:#D9FF6A; font-size:10px; }
+
+    /* ── VIDEO OVERLAY ── */
+    .video-btn { transition:transform .3s ease, background .3s ease; }
+    .video-btn:hover { transform:scale(1.1); background:rgba(217,255,106,.2) !important; }
+
+    /* ── NUMBER SHIMMER ── */
+    .shimmer-text {
+      background:linear-gradient(90deg,#D8DEE3 25%,#D9FF6A 50%,#D8DEE3 75%);
+      background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+      animation:shimmer 2.5s linear infinite;
+    }
+
+    /* ── PROCESS STEP LINE ── */
+    .step-connector { position:relative; }
+    .step-connector:not(:last-child)::after {
+      content:''; position:absolute; top:36px; left:calc(100% + 0px); width:100%; height:1px;
+      background:linear-gradient(90deg,rgba(217,255,106,.3),transparent);
+    }
+
+    /* ── SCROLL BOUNCE ── */
+    @keyframes scroll-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+    .scroll-bounce { animation:scroll-bounce 2s ease-in-out infinite; }
+
+    /* ── AVATAR RING ── */
+    .avatar-ring { border:2px solid #D9FF6A; }
+
+    /* ── PRICING HIGHLIGHT ── */
+    .pricing-featured {
+      background:linear-gradient(160deg,rgba(217,255,106,.12) 0%,#222A31 60%);
+      border:1px solid rgba(217,255,106,.4);
+      box-shadow:0 0 48px rgba(217,255,106,.12);
+    }
+
+    /* light mode patches */
+    [data-theme="light"] .text-fade {
+      background:linear-gradient(90deg,#0B0D11 0%,#0B0D11 55%,rgba(11,13,17,.2) 100%);
+      -webkit-background-clip:text; background-clip:text;
+    }
+    [data-theme="light"] .stat-stroke { -webkit-text-stroke-color:#B7DF4E; }
+    [data-theme="light"] body { background:#D8DEE3; }
+    [data-theme="light"] .glass { background:rgba(237,239,241,.9); }
+    [data-theme="light"] .hero-bg {
+      background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(185,220,60,.12) 0%,transparent 65%),
+                 linear-gradient(135deg,#CDD4DC 0%,#D8DEE3 60%,#C8CFD8 100%);
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased">
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<header id="main-header" class="w-full bg-brand-bg/90 border-b border-brand-border/10 glass">
+  <div class="container mx-auto px-6 max-w-site flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-3 flex-shrink-0">
+      <img src="assets/logoNexo.svg" alt="Nexo Digital" class="h-14 w-auto">
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-brand-textPrimary">
+
+      <a href="#home" class="nav-link text-brand-primary">
+        <i class="nav-icon fas fa-house"></i> Home
+      </a>
+
+      <a href="#sobre" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-users"></i> Sobre
+      </a>
+
+      <!-- MEGA MENU SERVIÇOS -->
+      <div class="mega-trigger">
+        <button class="nav-link hover:text-brand-primary transition duration-200 cursor-pointer select-none">
+          <i class="nav-icon fas fa-briefcase"></i> Serviços
+          <i class="fas fa-chevron-down text-[9px] ml-0.5 opacity-60"></i>
+        </button>
+
+        <div class="mega-menu-wrap">
+          <div class="mega-menu-arrow"></div>
+          <div class="bg-brand-surface border border-brand-primary/20 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,.55)] overflow-hidden">
+            <div class="grid grid-cols-3">
+
+              <!-- Services grid (2 cols) -->
+              <div class="col-span-2 p-3 grid grid-cols-2 gap-1">
+
+                <a href="servicos/trafego-pago/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-chart-bar"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Tráfego Pago</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Google, Meta, TikTok & LinkedIn Ads</p>
+                  </div>
+                </a>
+
+                <a href="servicos/email-marketing/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-envelope-open-text"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">E-mail Marketing</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Sequências, A/B e reativação</p>
+                  </div>
+                </a>
+
+                <a href="servicos/automacao/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-robot"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Automação de Marketing</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Fluxos, lead scoring e integrações</p>
+                  </div>
+                </a>
+
+                <a href="servicos/crm-funis/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-filter"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">CRM & Funis de Vendas</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">HubSpot, RD, Pipedrive</p>
+                  </div>
+                </a>
+
+                <a href="servicos/social-media/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-share-nodes"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Social Media</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Gestão, conteúdo e crescimento</p>
+                  </div>
+                </a>
+
+                <a href="servicos/seo-conteudo/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">SEO & Conteúdo</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Rank orgânico e autoridade</p>
+                  </div>
+                </a>
+
+                <!-- View all -->
+                <div class="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1">
+                  <a href="#servicos" class="flex items-center gap-2 text-xs text-brand-primary font-semibold hover:gap-3 transition-all duration-200">
+                    <i class="fas fa-grid-2 text-[10px]"></i> Ver todos os serviços
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Right CTA panel -->
+              <div class="bg-brand-bg/60 border-l border-brand-primary/10 p-6 flex flex-col justify-between">
+                <div>
+                  <p class="text-[10px] font-semibold text-brand-primary uppercase tracking-wider mb-2">Diagnóstico Grátis</p>
+                  <h4 class="font-bold text-brand-textPrimary text-sm leading-snug mb-3">Descubra onde seu marketing está perdendo dinheiro</h4>
+                  <p class="text-brand-textMuted text-xs leading-relaxed mb-5">Auditoria completa em 48h. Sem compromisso.</p>
+                  <button onclick="abrirPopup()"
+                    class="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition">
+                    <span class="px-4 py-2 text-xs font-bold text-brand-bg">Agendar agora</span>
+                    <span class="btn-icon w-7 h-7 rounded-full bg-brand-bg/20 flex items-center justify-center">
+                      <i class="fas fa-arrow-right text-brand-bg text-[10px]"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="mt-6 pt-5 border-t border-brand-border/10 space-y-2">
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> +150 clientes atendidos
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> R$47M gerenciados em mídia
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> 97% taxa de retenção
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /MEGA MENU -->
+
+      <a href="#cases" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-trophy"></i> Cases
+      </a>
+
+      <a href="#pricing" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-tag"></i> Planos
+      </a>
+
+      <a href="#contato" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-message"></i> Contato
+      </a>
+
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-3">
+      <button id="theme-toggle" aria-label="Alternar tema"
+        class="w-10 h-10 rounded-full hidden md:flex items-center justify-center text-brand-textSecondary hover:text-brand-primary transition">
+        <i class="fas fa-moon text-sm"></i>
+      </button>
+      <button onclick="abrirPopup()"
+        class="split-btn hidden md:inline-flex items-center rounded-full bg-brand-bg/40 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition">
+        <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Fale Conosco</span>
+        <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+          <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+        </span>
+      </button>
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary hover:text-brand-primary transition">
+        <i class="fas fa-bars text-sm"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden border-t border-brand-border/10">
+    <nav class="container mx-auto px-6 py-4 flex flex-col gap-1 text-sm font-medium">
+
+      <a href="#home" onclick="closeMobileMenu()"
+        class="nav-link text-brand-primary py-2.5 px-3 rounded-xl">
+        <i class="nav-icon fas fa-house w-4 text-center"></i> Home
+      </a>
+
+      <a href="#sobre" onclick="closeMobileMenu()"
+        class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+        <i class="nav-icon fas fa-users w-4 text-center"></i> Sobre
+      </a>
+
+      <!-- Mobile services accordion -->
+      <div>
+        <button onclick="toggleMobServices()"
+          class="nav-link w-full hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60 justify-between">
+          <span class="flex items-center gap-1.5">
+            <i class="nav-icon fas fa-briefcase w-4 text-center"></i> Serviços
+          </span>
+          <i id="mob-services-chevron" class="fas fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div id="mob-services-sub" class="pl-4 mt-1">
+          <div class="border-l border-brand-primary/20 pl-4 space-y-1 py-2">
+            <a href="servicos/trafego-pago/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-chart-bar text-brand-primary text-xs w-4 text-center"></i> Tráfego Pago
+            </a>
+            <a href="servicos/automacao/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-robot text-brand-primary text-xs w-4 text-center"></i> Automação de Marketing
+            </a>
+            <a href="servicos/social-media/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-share-nodes text-brand-primary text-xs w-4 text-center"></i> Social Media
+            </a>
+            <a href="servicos/email-marketing/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-envelope-open-text text-brand-primary text-xs w-4 text-center"></i> E-mail Marketing
+            </a>
+            <a href="servicos/crm-funis/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-filter text-brand-primary text-xs w-4 text-center"></i> CRM & Funis
+            </a>
+            <a href="servicos/seo-conteudo/" onclick="closeMobileMenu()"
+              class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+              <i class="fas fa-magnifying-glass-chart text-brand-primary text-xs w-4 text-center"></i> SEO & Conteúdo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#cases" onclick="closeMobileMenu()"
+        class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+        <i class="nav-icon fas fa-trophy w-4 text-center"></i> Cases
+      </a>
+
+      <a href="#pricing" onclick="closeMobileMenu()"
+        class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+        <i class="nav-icon fas fa-tag w-4 text-center"></i> Planos
+      </a>
+
+      <a href="#contato" onclick="closeMobileMenu()"
+        class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+        <i class="nav-icon fas fa-message w-4 text-center"></i> Contato
+      </a>
+
+      <button onclick="abrirPopup();closeMobileMenu()"
+        class="mt-3 w-full split-btn inline-flex items-center justify-between rounded-full border border-brand-primary/40 p-1">
+        <span class="px-5 py-2.5 text-sm font-semibold">Solicitar Proposta</span>
+        <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+          <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+        </span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section id="home" class="relative mx-4 md:mx-6 mt-4 rounded-3xl overflow-hidden hero-bg min-h-[88vh] flex items-center">
+
+  <!-- Decorative floating orbs -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <!-- Big glow center-right -->
+    <div class="glow-pulse absolute top-1/3 right-1/4 w-[420px] h-[420px] rounded-full"
+         style="background:radial-gradient(circle,rgba(217,255,106,.12) 0%,transparent 70%)"></div>
+    <!-- Small glow top-left -->
+    <div class="glow-pulse absolute -top-20 left-1/4 w-[280px] h-[280px] rounded-full"
+         style="background:radial-gradient(circle,rgba(217,255,106,.07) 0%,transparent 70%);animation-delay:1.5s"></div>
+
+    <!-- Spinning ring 1 -->
+    <div class="float-a absolute top-16 right-16 w-32 h-32 opacity-30">
+      <div class="spin-slow w-full h-full rounded-full border border-brand-primary/40" style="border-style:dashed"></div>
+    </div>
+    <!-- Spinning ring 2 -->
+    <div class="float-b absolute bottom-24 right-32 w-20 h-20 opacity-25">
+      <div class="spin-rev w-full h-full rounded-full border border-brand-primary/30"></div>
+    </div>
+
+    <!-- Geo dots -->
+    <div class="float-c absolute top-1/2 right-12 w-3 h-3 rounded-full bg-brand-primary opacity-50"></div>
+    <div class="float-a absolute top-1/4 right-1/3 w-2 h-2 rounded-full bg-brand-primary opacity-40" style="animation-delay:2s"></div>
+    <div class="float-b absolute bottom-1/3 left-1/3 w-2 h-2 rounded-full bg-brand-primary opacity-30" style="animation-delay:1s"></div>
+
+    <!-- Abstract grid lines -->
+    <svg class="absolute right-0 top-0 h-full w-1/2 opacity-[.04]" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="#D9FF6A" stroke-width="0.5"/></pattern></defs>
+      <rect width="600" height="800" fill="url(#grid)"/>
+    </svg>
+
+    <!-- Wave SVG decoration -->
+    <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] opacity-[.07]" viewBox="0 0 400 400" fill="none">
+      <path d="M0 200 Q100 80 200 200 Q300 320 400 200" stroke="#D9FF6A" stroke-width="1.5" fill="none"/>
+      <path d="M0 230 Q100 110 200 230 Q300 350 400 230" stroke="#D9FF6A" stroke-width="1" fill="none"/>
+      <path d="M0 170 Q100 50 200 170 Q300 290 400 170" stroke="#D9FF6A" stroke-width="1" fill="none"/>
+      <circle cx="200" cy="200" r="80" stroke="#D9FF6A" stroke-width=".8" fill="none"/>
+      <circle cx="200" cy="200" r="140" stroke="#D9FF6A" stroke-width=".5" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="container mx-auto px-8 md:px-16 relative z-10 py-20 md:py-28">
+    <div class="max-w-2xl">
+
+      <p class="eyebrow hero-line-1">
+        <i class="fas fa-circle-dot text-xs"></i> Agência de Marketing & Automação
+      </p>
+
+      <h1 class="hero-line-2 text-fade text-5xl md:text-[4.5rem] font-extrabold tracking-tight leading-[1.08] mb-6">
+        Conecte seu negócio<br>
+        <span class="text-brand-primary" style="-webkit-text-fill-color:#D9FF6A">ao próximo</span> nível
+      </h1>
+
+      <p class="hero-line-3 text-brand-textSecondary text-lg leading-relaxed max-w-lg mb-8">
+        Unimos estratégia de dados, tráfego pago e automação inteligente para escalar receita e reduzir custo de aquisição de clientes.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-line-4 flex flex-wrap items-center gap-4 mb-10">
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+          <span class="px-6 py-2.5 text-sm font-bold text-brand-bg">Solicitar Proposta</span>
+          <span class="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-sm"></i>
+          </span>
+        </button>
+
+        <a href="#cases"
+          class="split-btn inline-flex items-center rounded-full bg-brand-bg/30 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition">
+          <span class="px-6 py-3 text-sm font-semibold text-brand-textPrimary">Ver Cases</span>
+          <span class="btn-icon w-10 h-10 rounded-full bg-brand-primary/10 border border-brand-primary/30 flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-primary text-sm"></i>
+          </span>
+        </a>
+      </div>
+
+      <!-- Social proof -->
+      <div class="hero-line-5 flex flex-wrap items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="flex -space-x-3">
+            <img class="w-10 h-10 rounded-full avatar-ring object-cover" src="https://i.pravatar.cc/80?img=32" alt="">
+            <img class="w-10 h-10 rounded-full avatar-ring object-cover" src="https://i.pravatar.cc/80?img=47" alt="">
+            <img class="w-10 h-10 rounded-full avatar-ring object-cover" src="https://i.pravatar.cc/80?img=12" alt="">
+            <img class="w-10 h-10 rounded-full avatar-ring object-cover" src="https://i.pravatar.cc/80?img=5" alt="">
+          </div>
+          <div>
+            <p class="text-sm font-bold text-brand-textPrimary">+150 empresas</p>
+            <div class="flex gap-0.5 text-yellow-400 text-xs">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="h-8 w-px bg-brand-border/20 hidden sm:block"></div>
+
+        <div class="flex items-center gap-2 text-sm text-brand-textSecondary">
+          <button class="video-btn w-12 h-12 rounded-full bg-brand-surface border border-brand-primary/30 flex items-center justify-center">
+            <i class="fas fa-play text-brand-primary text-sm"></i>
+          </button>
+          <span class="text-sm text-brand-textMuted max-w-[160px] leading-snug">Veja como escalamos resultados em 90 dias</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-bounce opacity-40">
+    <div class="w-6 h-10 rounded-full border border-brand-primary/40 flex items-start justify-center pt-1.5">
+      <div class="w-1.5 h-3 rounded-full bg-brand-primary"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     LOGO STRIP (parceiros/plataformas)
+================================================================ -->
+<section class="py-14 overflow-hidden">
+  <div class="container mx-auto px-6 max-w-site mb-6" data-aos="fade-up">
+    <p class="text-center text-brand-textMuted text-xs font-semibold tracking-widest uppercase">Plataformas & Parceiros</p>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track select-none">
+      <!-- repeat twice for seamless loop -->
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-google text-2xl"></i> Google Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-meta text-2xl"></i> Meta Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-hubspot text-2xl"></i> HubSpot</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-salesforce text-2xl"></i> Salesforce</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-tiktok text-2xl"></i> TikTok Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-linkedin text-2xl"></i> LinkedIn Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-shopify text-2xl"></i> Shopify</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-mailchimp text-2xl"></i> Mailchimp</span>
+      <!-- duplicate -->
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-google text-2xl"></i> Google Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-meta text-2xl"></i> Meta Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-hubspot text-2xl"></i> HubSpot</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-salesforce text-2xl"></i> Salesforce</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-tiktok text-2xl"></i> TikTok Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-linkedin text-2xl"></i> LinkedIn Ads</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-shopify text-2xl"></i> Shopify</span>
+      <span class="flex items-center gap-2 text-brand-textMuted font-semibold text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition"><i class="fab fa-mailchimp text-2xl"></i> Mailchimp</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SOBRE / EXPERTISE
+================================================================ -->
+<section id="sobre" class="py-24">
+  <div class="container mx-auto px-6 max-w-site">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Fotos com overlap card -->
+      <div class="relative pb-16" data-aos="fade-right">
+        <div class="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80"
+               alt="Time Nexo Digital" class="rounded-2xl w-full h-48 object-cover col-span-2">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80"
+               alt="Estratégia" class="rounded-2xl w-full h-36 object-cover">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80"
+               alt="Dados" class="rounded-2xl w-full h-36 object-cover">
+        </div>
+        <!-- Photo overlap card -->
+        <div class="photo-overlap-card">
+          <p class="font-bold text-brand-textPrimary text-sm mb-2">Parceiro de crescimento, não só uma agência.</p>
+          <a href="#" onclick="abrirPopup();return false;" class="text-brand-primary text-xs font-semibold inline-flex items-center gap-1">
+            Falar com especialista <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div data-aos="fade-left" data-aos-delay="100">
+        <p class="eyebrow"><i class="fas fa-circle-dot text-xs"></i> Nossa Expertise</p>
+        <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.15] mb-6">
+          Dados, Estratégia<br>e Resultados Reais
+        </h2>
+        <p class="text-brand-textSecondary leading-relaxed mb-8">
+          Somos especialistas em unir tráfego pago de alta performance com automação de processos comerciais. Nosso método elimina o desperdício, acelera o ciclo de vendas e cria sistemas que escalam sem depender de volume de pessoas.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Tráfego Pago</div>
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Automação de Marketing</div>
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> CRM & Funis de Vendas</div>
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> SEO & Conteúdo</div>
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> E-mail Marketing</div>
+          <div class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Analytics Avançado</div>
+        </div>
+
+        <!-- Stat card inline -->
+        <div class="bg-brand-surface border border-brand-primary/25 rounded-2xl p-6 flex items-center gap-6 glow-card">
+          <span class="stat-stroke text-5xl leading-none">8+</span>
+          <div>
+            <p class="font-bold text-brand-textPrimary">Anos de experiência<br>em marketing digital</p>
+            <p class="text-brand-textMuted text-xs mt-1">Mais de R$47M gerenciados em mídia paga</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     POR QUE NEXO (3 features)
+================================================================ -->
+<section class="py-24 bg-brand-surface/30">
+  <div class="container mx-auto px-6 max-w-site">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> Por que Nexo</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+        Sua Vantagem<br>Competitiva Digital
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon-badge-lg mb-6"><i class="fas fa-chart-line"></i></div>
+        <h3 class="text-xl font-bold text-brand-textPrimary mb-3">Abordagem Data-First</h3>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Cada decisão parte de dados reais. Dashboards ao vivo, relatórios semanais e reuniões de performance para que você nunca esteja no escuro.</p>
+        <div class="mt-6 pt-6 border-t border-brand-border/10">
+          <div class="flex items-center gap-2 text-brand-primary text-sm font-semibold">
+            <i class="fas fa-arrow-right text-xs"></i> Relatórios em tempo real
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon-badge-lg mb-6"><i class="fas fa-robot"></i></div>
+        <h3 class="text-xl font-bold text-brand-textPrimary mb-3">Automação Inteligente</h3>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Construímos fluxos automatizados que nutrem, qualificam e convertem leads 24h por dia — sem intervenção manual e com custo por aquisição em queda.</p>
+        <div class="mt-6 pt-6 border-t border-brand-border/10">
+          <div class="flex items-center gap-2 text-brand-primary text-sm font-semibold">
+            <i class="fas fa-arrow-right text-xs"></i> CRM + fluxos integrados
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-badge-lg mb-6"><i class="fas fa-bullseye"></i></div>
+        <h3 class="text-xl font-bold text-brand-textPrimary mb-3">Foco em Resultado</h3>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Nossa remuneração é orientada a performance. Crescemos junto com você — quando você sobe de patamar, comemoramos juntos.</p>
+        <div class="mt-6 pt-6 border-t border-brand-border/10">
+          <div class="flex items-center gap-2 text-brand-primary text-sm font-semibold">
+            <i class="fas fa-arrow-right text-xs"></i> Modelo orientado a ROI
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     VIDEO / CTA BANNER
+================================================================ -->
+<section class="py-6 px-4 md:px-6">
+  <div class="relative rounded-3xl overflow-hidden min-h-[420px] flex items-center" data-aos="fade-up">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80"
+         alt="Time Nexo" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-bg/95 via-brand-bg/70 to-transparent"></div>
+    <div class="relative z-10 container mx-auto px-8 md:px-16 py-16">
+      <p class="eyebrow"><i class="fas fa-circle-dot text-xs"></i> Nossa Metodologia</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight max-w-xl mb-6">
+        Transforme Visibilidade<br>em Receita Previsível
+      </h2>
+      <p class="text-brand-textSecondary max-w-md mb-8 leading-relaxed">
+        Do primeiro clique ao fechamento: mapeamos cada etapa da jornada do cliente e automatizamos pontos críticos de conversão.
+      </p>
+      <div class="flex items-center gap-4">
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+          <span class="px-6 py-2.5 text-sm font-bold text-brand-bg">Começar Agora</span>
+          <span class="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-sm"></i>
+          </span>
+        </button>
+        <button class="video-btn w-14 h-14 rounded-full bg-brand-surface/70 border border-brand-primary/40 flex items-center justify-center">
+          <i class="fas fa-play text-brand-primary"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SERVIÇOS
+================================================================ -->
+<section id="servicos" class="py-24">
+  <div class="container mx-auto px-6 max-w-site">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> O Que Fazemos</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+        Soluções Digitais que<br>Geram Resultados Reais
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Serviço 1 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon-badge mb-6"><i class="fas fa-chart-bar"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">Tráfego Pago</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Google Ads, Meta Ads, TikTok e LinkedIn. Campanhas otimizadas por IA com foco em ROAS e redução de CAC desde o primeiro mês.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+      <!-- Serviço 2 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="80">
+        <div class="icon-badge mb-6"><i class="fas fa-robot"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">Automação de Marketing</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Fluxos de nutrição, lead scoring automático, sequências de e-mail e integrações entre plataformas para vender enquanto você dorme.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+      <!-- Serviço 3 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="160">
+        <div class="icon-badge mb-6"><i class="fas fa-share-nodes"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">Social Media</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Gestão de redes sociais com calendário editorial, produção de conteúdo e estratégia de crescimento orgânico para construir autoridade de marca.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+      <!-- Serviço 4 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon-badge mb-6"><i class="fas fa-envelope-open-text"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">E-mail Marketing</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Sequências estratégicas de e-mail com segmentação avançada, testes A/B e automação de reativação que recuperam receita dormida.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+      <!-- Serviço 5 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="80">
+        <div class="icon-badge mb-6"><i class="fas fa-filter"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">CRM & Funis de Vendas</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Implementação e otimização de CRM (HubSpot, RD, Pipedrive) com funis personalizados, pipelines e automações que aumentam a taxa de fechamento.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+      <!-- Serviço 6 -->
+      <div class="card-lift shine-card bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="160">
+        <div class="icon-badge mb-6"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <h4 class="text-xl font-bold text-brand-textPrimary mb-3">SEO & Conteúdo</h4>
+        <p class="text-brand-textSecondary text-sm mb-6 flex-1">Estratégia de conteúdo orientada a busca: artigos, landing pages e otimização técnica para rankear e atrair tráfego qualificado de forma recorrente.</p>
+        <button onclick="abrirPopup()"
+          class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+          <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Ver Detalhes</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CASE STUDIES
+================================================================ -->
+<section id="cases" class="py-6 px-4 md:px-6">
+  <div class="bg-brand-surface/40 border border-brand-primary/20 rounded-3xl p-8 md:p-14 glow-card">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12" data-aos="fade-up">
+      <div>
+        <p class="eyebrow"><i class="fas fa-circle-dot text-xs"></i> Cases de Sucesso</p>
+        <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+          Veja Como Escalamos<br>Empresas de Verdade
+        </h2>
+      </div>
+      <a href="#" class="text-brand-primary text-sm font-semibold flex items-center gap-2 flex-shrink-0">
+        Ver todos os cases <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Case 1 -->
+      <div class="relative rounded-2xl overflow-hidden group cursor-pointer card-lift" data-aos="fade-up" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+             alt="Case E-commerce" class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/50 to-transparent"></div>
+        <!-- Tags -->
+        <div class="absolute top-4 right-4 flex flex-wrap gap-2 max-w-[65%] justify-end">
+          <span class="tag-pill">Meta Ads</span>
+          <span class="tag-pill">E-commerce</span>
+          <span class="tag-pill">Automação</span>
+          <span class="tag-pill">Google</span>
+        </div>
+        <!-- Content -->
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-brand-primary text-xs font-bold bg-brand-primary/10 border border-brand-primary/30 px-3 py-1 rounded-full">+500% ROAS</span>
+          </div>
+          <h4 class="text-xl font-bold text-brand-textPrimary mb-1">Loja de Moda: de R$30k a R$180k/mês</h4>
+          <p class="text-brand-textSecondary text-sm">Escalamos em 4 meses com tráfego pago + automação de abandono de carrinho.</p>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="relative rounded-2xl overflow-hidden group cursor-pointer card-lift" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+             alt="Case SaaS" class="w-full h-72 object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/50 to-transparent"></div>
+        <!-- Tags -->
+        <div class="absolute top-4 right-4 flex flex-wrap gap-2 max-w-[65%] justify-end">
+          <span class="tag-pill">LinkedIn Ads</span>
+          <span class="tag-pill">SaaS B2B</span>
+          <span class="tag-pill">CRM</span>
+          <span class="tag-pill">Nurturing</span>
+        </div>
+        <!-- Content -->
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-brand-primary text-xs font-bold bg-brand-primary/10 border border-brand-primary/30 px-3 py-1 rounded-full">+300% MQL</span>
+          </div>
+          <h4 class="text-xl font-bold text-brand-textPrimary mb-1">SaaS B2B: 300% mais leads qualificados</h4>
+          <p class="text-brand-textSecondary text-sm">Implementamos funil de automação com lead scoring que triplicou o volume de MQLs em 90 dias.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     STATS + DEPOIMENTOS
+================================================================ -->
+<section class="py-24">
+  <div class="container mx-auto px-6 max-w-site">
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+      <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+        <p class="stat-stroke text-6xl leading-none mb-2" data-counter="150" data-suffix="+">150+</p>
+        <p class="text-brand-textPrimary font-semibold text-sm">Clientes Atendidos</p>
+        <p class="text-brand-textMuted text-xs mt-1">em 12 segmentos diferentes</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="80">
+        <p class="stat-stroke text-6xl leading-none mb-2" data-counter="47" data-prefix="R$" data-suffix="M+">R$47M+</p>
+        <p class="text-brand-textPrimary font-semibold text-sm">Investidos em Mídia</p>
+        <p class="text-brand-textMuted text-xs mt-1">gerenciados para clientes</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="160">
+        <p class="stat-stroke text-6xl leading-none mb-2" data-counter="97" data-suffix="%">97%</p>
+        <p class="text-brand-textPrimary font-semibold text-sm">Taxa de Retenção</p>
+        <p class="text-brand-textMuted text-xs mt-1">clientes que renovam contrato</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="240">
+        <p class="stat-stroke text-6xl leading-none mb-2" data-counter="8" data-suffix="+">8+</p>
+        <p class="text-brand-textPrimary font-semibold text-sm">Anos de Experiência</p>
+        <p class="text-brand-textMuted text-xs mt-1">em marketing digital</p>
+      </div>
+    </div>
+
+    <!-- Depoimentos -->
+    <div class="mb-12 text-center" data-aos="fade-up">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> Depoimentos</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+        O Que Nossos Clientes<br>Dizem de Verdade
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex gap-0.5 text-yellow-400 text-sm">★★★★★</div>
+          <i class="fas fa-quote-right text-brand-primary text-xl opacity-40"></i>
+        </div>
+        <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">
+          "A Nexo transformou completamente nossa operação de marketing. Em 3 meses, nosso CAC caiu 42% e o faturamento aumentou 180%. É uma parceria real, não só uma prestação de serviço."
+        </p>
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=32" alt="Carla Souza" class="w-11 h-11 rounded-full avatar-ring object-cover">
+          <div>
+            <p class="font-bold text-brand-textPrimary text-sm">Carla Souza</p>
+            <p class="text-brand-textMuted text-xs">CEO, ModaRápida</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex gap-0.5 text-yellow-400 text-sm">★★★★★</div>
+          <i class="fas fa-quote-right text-brand-primary text-xl opacity-40"></i>
+        </div>
+        <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">
+          "Implementaram o CRM e toda a automação de prospecção em 30 dias. Hoje nosso time de vendas foca só em fechar — o funil trabalha sozinho. Resultado: taxa de fechamento foi de 12% para 31%."
+        </p>
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=15" alt="Rodrigo Lima" class="w-11 h-11 rounded-full avatar-ring object-cover">
+          <div>
+            <p class="font-bold text-brand-textPrimary text-sm">Rodrigo Lima</p>
+            <p class="text-brand-textMuted text-xs">Founder, TechFlow SaaS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex gap-0.5 text-yellow-400 text-sm">★★★★★</div>
+          <i class="fas fa-quote-right text-brand-primary text-xl opacity-40"></i>
+        </div>
+        <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">
+          "Melhor investimento que fizemos. A equipe da Nexo é transparente, proativa e entrega relatórios que eu realmente entendo. ROAS médio de 7x no Meta Ads desde que começamos juntos."
+        </p>
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/80?img=47" alt="Ana Ferreira" class="w-11 h-11 rounded-full avatar-ring object-cover">
+          <div>
+            <p class="font-bold text-brand-textPrimary text-sm">Ana Ferreira</p>
+            <p class="text-brand-textMuted text-xs">Diretora de Marketing, ClinicaPlus</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     HOW IT WORKS (processo)
+================================================================ -->
+<section class="py-6 px-4 md:px-6">
+  <div class="border border-brand-border/15 rounded-3xl p-8 md:p-14 bg-brand-surface/20" data-aos="fade-up">
+    <div class="text-center mb-12">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> Como Funciona</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+        Do Diagnóstico<br>à Escala em 4 Passos
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-brand-border/15">
+
+      <div class="p-8" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex items-start justify-between mb-6">
+          <div class="icon-badge"><i class="fas fa-magnifying-glass"></i></div>
+          <span class="text-brand-textMuted text-sm font-semibold">01</span>
+        </div>
+        <h5 class="font-bold text-brand-textPrimary mb-2">Imersão & Diagnóstico</h5>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Auditamos seu cenário atual: canais, métricas, concorrência e oportunidades de crescimento imediato.</p>
+      </div>
+
+      <div class="p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-start justify-between mb-6">
+          <div class="icon-badge"><i class="fas fa-map"></i></div>
+          <span class="text-brand-textMuted text-sm font-semibold">02</span>
+        </div>
+        <h5 class="font-bold text-brand-textPrimary mb-2">Estratégia Personalizada</h5>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Criamos um plano de crescimento sob medida com canais, orçamento, automações e metas claras de ROI.</p>
+      </div>
+
+      <div class="p-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-start justify-between mb-6">
+          <div class="icon-badge"><i class="fas fa-rocket"></i></div>
+          <span class="text-brand-textMuted text-sm font-semibold">03</span>
+        </div>
+        <h5 class="font-bold text-brand-textPrimary mb-2">Execução & Automação</h5>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Ativamos campanhas, fluxos e integrações. Testamos, iteramos e otimizamos continuamente com dados em tempo real.</p>
+      </div>
+
+      <div class="p-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-start justify-between mb-6">
+          <div class="icon-badge"><i class="fas fa-arrow-trend-up"></i></div>
+          <span class="text-brand-textMuted text-sm font-semibold">04</span>
+        </div>
+        <h5 class="font-bold text-brand-textPrimary mb-2">Otimização & Escala</h5>
+        <p class="text-brand-textSecondary text-sm leading-relaxed">Com o que funciona validado, escalamos investimento e estrutura. Crescimento sustentável e previsível.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PRICING (bento grid)
+================================================================ -->
+<section id="pricing" class="py-24">
+  <div class="container mx-auto px-6 max-w-site">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> Planos</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+        Planos Flexíveis para<br>Cada Estágio do Negócio
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+      <!-- Left: intro + Start -->
+      <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-8 text-center flex flex-col justify-center flex-1">
+          <h4 class="text-fade text-2xl font-extrabold mb-3">Encontre o plano ideal para sua empresa!</h4>
+          <p class="text-brand-textMuted text-sm mb-5">Sem contrato de fidelidade. Cancele quando quiser.</p>
+          <button onclick="abrirPopup()" class="text-brand-primary text-sm font-semibold hover:text-brand-primaryHover transition">
+            Agendar Diagnóstico Grátis →
+          </button>
+        </div>
+        <div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-8">
+          <h4 class="font-bold text-brand-textPrimary mb-1">Start</h4>
+          <p class="text-brand-textMuted text-sm mb-4">Para startups e pequenos negócios</p>
+          <p class="text-4xl font-extrabold text-brand-textPrimary mb-6">R$2.497 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
+          <button onclick="abrirPopup()"
+            class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition mb-6">
+            <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Contratar</span>
+            <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+              <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+            </span>
+          </button>
+          <ul class="space-y-3">
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> 1 canal de tráfego pago</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Relatórios semanais</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Gestão de redes sociais</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Center: destaque -->
+      <div class="pricing-featured rounded-2xl p-8 flex flex-col relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <!-- Popular badge -->
+        <div class="absolute top-6 right-6">
+          <span class="text-[10px] font-bold text-brand-bg bg-brand-primary px-3 py-1 rounded-full">MAIS POPULAR</span>
+        </div>
+        <!-- Glow bg -->
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full glow-pulse"
+               style="background:radial-gradient(circle,rgba(217,255,106,.15) 0%,transparent 70%)"></div>
+        </div>
+
+        <div class="relative z-10 flex-1 flex flex-col">
+          <h4 class="font-bold text-brand-textPrimary mb-1">Scale</h4>
+          <p class="text-brand-textMuted text-sm mb-4">Marketing completo para empresas em crescimento</p>
+          <p class="text-4xl font-extrabold text-brand-textPrimary mb-6">R$4.997 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
+
+          <button onclick="abrirPopup()"
+            class="split-btn inline-flex items-center justify-between w-full rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition mb-8">
+            <span class="px-5 py-2.5 text-sm font-bold text-brand-bg">Contratar Agora</span>
+            <span class="btn-icon w-9 h-9 rounded-full bg-brand-bg/20 flex items-center justify-center">
+              <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+            </span>
+          </button>
+
+          <div class="border-t border-brand-border/15 mb-6"></div>
+          <p class="text-brand-textMuted text-xs font-semibold mb-4 uppercase tracking-wider">Tudo do Start, mais:</p>
+          <ul class="space-y-3 flex-1">
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> 3 canais de tráfego pago</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Automação de marketing completa</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Implementação de CRM</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> E-mail marketing estratégico</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Dashboard de BI personalizado</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Reunião quinzenal de estratégia</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: highlights + Pro -->
+      <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6">
+          <h4 class="font-bold text-brand-textPrimary mb-4">Seu Crescimento é Nossa Prioridade</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center justify-between bg-brand-bg rounded-xl p-3 text-sm">
+              <span class="text-brand-textSecondary">Sem taxa de setup</span>
+              <i class="fas fa-check text-brand-primary text-xs"></i>
+            </li>
+            <li class="flex items-center justify-between bg-brand-bg rounded-xl p-3 text-sm">
+              <span class="text-brand-textSecondary">Sem fidelidade</span>
+              <i class="fas fa-check text-brand-primary text-xs"></i>
+            </li>
+            <li class="flex items-center justify-between bg-brand-bg rounded-xl p-3 text-sm">
+              <span class="text-brand-textSecondary">Relatórios transparentes</span>
+              <i class="fas fa-check text-brand-primary text-xs"></i>
+            </li>
+            <li class="flex items-center justify-between bg-brand-bg rounded-xl p-3 text-sm">
+              <span class="text-brand-textSecondary">Suporte via WhatsApp</span>
+              <i class="fas fa-check text-brand-primary text-xs"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-8 flex-1">
+          <h4 class="font-bold text-brand-textPrimary mb-1">Pro</h4>
+          <p class="text-brand-textMuted text-sm mb-4">Para empresas em aceleração e escala</p>
+          <p class="text-4xl font-extrabold text-brand-textPrimary mb-6">R$7.997 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
+          <button onclick="abrirPopup()"
+            class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition mb-6">
+            <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary">Contratar</span>
+            <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+              <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+            </span>
+          </button>
+          <ul class="space-y-3">
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Canais ilimitados</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Squad dedicado</li>
+            <li class="check-item"><span class="check-dot"><i class="fas fa-check text-[9px] text-brand-primary"></i></span> Reunião semanal de C-level</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FAQ
+================================================================ -->
+<section class="py-24 bg-brand-surface/20">
+  <div class="container mx-auto px-6 max-w-site-md">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> FAQ</p>
+      <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="space-y-3" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="faq-item bg-brand-surface border border-brand-border/15 rounded-2xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between p-6">
+          <p class="font-semibold text-brand-textPrimary text-sm pr-4">Em quanto tempo começo a ver resultados?</p>
+          <i class="faq-icon fas fa-plus text-brand-primary text-sm flex-shrink-0"></i>
+        </div>
+        <div class="faq-answer px-6">
+          <p class="text-brand-textSecondary text-sm leading-relaxed pb-6">As primeiras campanhas são ativadas nos primeiros 7 dias úteis após o onboarding. Os primeiros resultados de tráfego pago aparecem em 2–3 semanas. Para SEO e automação, o impacto mais expressivo ocorre a partir do 2º mês de operação.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-surface border border-brand-border/15 rounded-2xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between p-6">
+          <p class="font-semibold text-brand-textPrimary text-sm pr-4">Preciso ter um orçamento mínimo de mídia?</p>
+          <i class="faq-icon fas fa-plus text-brand-primary text-sm flex-shrink-0"></i>
+        </div>
+        <div class="faq-answer px-6">
+          <p class="text-brand-textSecondary text-sm leading-relaxed pb-6">Recomendamos no mínimo R$3.000/mês em verba de mídia (separado da taxa de gestão) para que os algoritmos das plataformas tenham volume suficiente de dados para otimização. Para e-commerce, o ideal é R$5.000+.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-surface border border-brand-border/15 rounded-2xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between p-6">
+          <p class="font-semibold text-brand-textPrimary text-sm pr-4">Como funciona o processo de onboarding?</p>
+          <i class="faq-icon fas fa-plus text-brand-primary text-sm flex-shrink-0"></i>
+        </div>
+        <div class="faq-answer px-6">
+          <p class="text-brand-textSecondary text-sm leading-relaxed pb-6">Após a assinatura, realizamos uma reunião de kick-off de 2 horas para coleta de informações, acesso às plataformas e alinhamento de metas. Em seguida, entregamos o plano estratégico em até 5 dias úteis com toda a estrutura de campanha e automação mapeada.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-surface border border-brand-border/15 rounded-2xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between p-6">
+          <p class="font-semibold text-brand-textPrimary text-sm pr-4">Vocês trabalham com quais segmentos de mercado?</p>
+          <i class="faq-icon fas fa-plus text-brand-primary text-sm flex-shrink-0"></i>
+        </div>
+        <div class="faq-answer px-6">
+          <p class="text-brand-textSecondary text-sm leading-relaxed pb-6">Temos experiência em e-commerce, SaaS B2B, clínicas e saúde, educação, imóveis, serviços profissionais e varejo físico. Nossa metodologia é adaptável a praticamente qualquer segmento com ciclo de venda bem definido.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-surface border border-brand-border/15 rounded-2xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+        <div class="flex items-center justify-between p-6">
+          <p class="font-semibold text-brand-textPrimary text-sm pr-4">Posso cancelar quando quiser?</p>
+          <i class="faq-icon fas fa-plus text-brand-primary text-sm flex-shrink-0"></i>
+        </div>
+        <div class="faq-answer px-6">
+          <p class="text-brand-textSecondary text-sm leading-relaxed pb-6">Sim. Não exigimos contrato de fidelidade. Pedimos apenas 30 dias de aviso prévio para organizar a transição e entregar todos os ativos, acessos e relatórios finais de forma ordenada.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     NEWSLETTER
+================================================================ -->
+<section id="contato" class="py-6 px-4 md:px-6">
+  <div class="bg-brand-surface border border-brand-primary/25 rounded-3xl p-10 md:p-16 text-center glow-card" data-aos="fade-up">
+    <div class="max-w-2xl mx-auto">
+      <div class="float-a inline-flex w-16 h-16 rounded-2xl items-center justify-center bg-brand-primary/10 border border-brand-primary/30 mb-6">
+        <i class="fas fa-bolt text-brand-primary text-2xl"></i>
+      </div>
+      <h2 class="text-fade text-3xl md:text-4xl font-extrabold mb-3">
+        Fique à Frente no Marketing Digital
+      </h2>
+      <p class="text-brand-textSecondary mb-8 leading-relaxed">
+        Insights exclusivos, tendências e estratégias que usamos com nossos clientes — entregues direto no seu e-mail, sem spam.
+      </p>
+      <form class="inline-flex items-center bg-brand-bg border border-brand-primary/30 rounded-full p-1.5 max-w-md w-full mx-auto mb-6" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Seu melhor e-mail" required
+          class="flex-1 bg-transparent px-5 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none">
+        <button type="submit" class="split-btn flex items-center gap-2 rounded-full pl-4 pr-1.5 py-1.5 hover:opacity-90 transition">
+          <span class="text-sm font-semibold text-brand-textPrimary">Inscrever</span>
+          <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+            <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+          </span>
+        </button>
+      </form>
+      <p class="text-brand-textMuted text-xs">+2.400 profissionais já recebem. Cancele quando quiser.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     BLOG
+================================================================ -->
+<section class="py-24">
+  <div class="container mx-auto px-6 max-w-site">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12" data-aos="fade-up">
+      <div>
+        <p class="eyebrow"><i class="fas fa-circle-dot text-xs"></i> Blog & Conteúdo</p>
+        <h2 class="text-fade text-3xl md:text-5xl font-extrabold tracking-tight">
+          Estratégias de Marketing<br>& Automação em Destaque
+        </h2>
+      </div>
+      <a href="#" class="text-brand-primary text-sm font-semibold flex items-center gap-2 flex-shrink-0">
+        Ver todos os artigos <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="card-lift" data-aos="fade-up" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=700&q=80"
+             alt="Meta Ads 2025" class="w-full h-52 object-cover rounded-2xl mb-5">
+        <div class="flex items-center gap-4 text-xs text-brand-textMuted mb-3">
+          <span class="flex items-center gap-1.5"><i class="far fa-calendar text-brand-primary"></i> 20 Jun 2026</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-tag text-brand-primary"></i> Tráfego Pago</span>
+        </div>
+        <h4 class="text-lg font-bold text-brand-textPrimary mb-2">Como Escalar no Meta Ads em 2026 sem Queimar Verba</h4>
+        <p class="text-brand-textSecondary text-sm mb-3 leading-relaxed">As novas estruturas de campanha da Meta mudaram o jogo. Veja como adaptamos nossa estratégia e conseguimos 40% mais ROAS.</p>
+        <a href="#" class="text-brand-primary text-sm font-semibold inline-flex items-center gap-1">Ler artigo <i class="fas fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <div class="card-lift" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80"
+             alt="Automação de Marketing" class="w-full h-52 object-cover rounded-2xl mb-5">
+        <div class="flex items-center gap-4 text-xs text-brand-textMuted mb-3">
+          <span class="flex items-center gap-1.5"><i class="far fa-calendar text-brand-primary"></i> 10 Jun 2026</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-tag text-brand-primary"></i> Automação</span>
+        </div>
+        <h4 class="text-lg font-bold text-brand-textPrimary mb-2">Automação de Marketing: Reduza CAC e Aumente LTV</h4>
+        <p class="text-brand-textSecondary text-sm mb-3 leading-relaxed">Como fluxos automatizados de nutrição podem transformar leads frios em clientes fiéis — e como montamos esses sistemas para nossos clientes.</p>
+        <a href="#" class="text-brand-primary text-sm font-semibold inline-flex items-center gap-1">Ler artigo <i class="fas fa-arrow-right text-xs"></i></a>
+      </div>
+
+      <div class="card-lift" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=700&q=80"
+             alt="CRM Estratégico" class="w-full h-52 object-cover rounded-2xl mb-5">
+        <div class="flex items-center gap-4 text-xs text-brand-textMuted mb-3">
+          <span class="flex items-center gap-1.5"><i class="far fa-calendar text-brand-primary"></i> 2 Jun 2026</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-tag text-brand-primary"></i> CRM</span>
+        </div>
+        <h4 class="text-lg font-bold text-brand-textPrimary mb-2">CRM Estratégico: Transforme Leads Frios em Clientes Fiéis</h4>
+        <p class="text-brand-textSecondary text-sm mb-3 leading-relaxed">A maioria das empresas usa o CRM como agenda. Mostramos como transformá-lo em uma máquina de conversão com automações e lead scoring.</p>
+        <a href="#" class="text-brand-primary text-sm font-semibold inline-flex items-center gap-1">Ler artigo <i class="fas fa-arrow-right text-xs"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer class="mx-4 md:mx-6 mb-4 rounded-t-3xl border border-b-0 border-brand-primary/20 bg-brand-surface pt-16 pb-8 px-8 md:px-16">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+    <div>
+      <a href="#home" class="block mb-5">
+        <img src="assets/logoNexo.svg" alt="Nexo Digital" class="h-14 w-auto">
+      </a>
+      <h5 class="font-bold text-brand-textPrimary mb-3 text-sm leading-snug">Conectamos estratégia, dados e automação para escalar negócios.</h5>
+      <p class="text-brand-textMuted text-sm">Marketing de performance com resultados mensuráveis.</p>
+    </div>
+    <div>
+      <h6 class="font-bold text-brand-textPrimary mb-4 text-sm">Links Rápidos</h6>
+      <ul class="space-y-2 text-sm text-brand-textMuted">
+        <li><a href="#home"     class="hover:text-brand-primary transition">Home</a></li>
+        <li><a href="#sobre"    class="hover:text-brand-primary transition">Sobre a Nexo</a></li>
+        <li><a href="#cases"    class="hover:text-brand-primary transition">Cases de Sucesso</a></li>
+        <li><a href="#pricing"  class="hover:text-brand-primary transition">Planos</a></li>
+        <li><a href="#"         class="hover:text-brand-primary transition">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6 class="font-bold text-brand-textPrimary mb-4 text-sm">Serviços</h6>
+      <ul class="space-y-2 text-sm text-brand-textMuted">
+        <li><a href="#" class="hover:text-brand-primary transition">Tráfego Pago</a></li>
+        <li><a href="#" class="hover:text-brand-primary transition">Automação de Marketing</a></li>
+        <li><a href="#" class="hover:text-brand-primary transition">Social Media</a></li>
+        <li><a href="#" class="hover:text-brand-primary transition">CRM & Funis</a></li>
+        <li><a href="#" class="hover:text-brand-primary transition">E-mail Marketing</a></li>
+        <li><a href="#" class="hover:text-brand-primary transition">SEO & Conteúdo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6 class="font-bold text-brand-textPrimary mb-4 text-sm">Contato</h6>
+      <p class="text-brand-textMuted text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-envelope text-brand-primary text-xs"></i> contato@nexodigital.com.br
+      </p>
+      <p class="text-brand-textMuted text-sm mb-1 flex items-center gap-2">
+        <i class="fab fa-whatsapp text-brand-primary text-xs"></i> +55 (11) 99999-9999
+      </p>
+      <p class="text-brand-textMuted text-sm mb-6 flex items-center gap-2">
+        <i class="fas fa-location-dot text-brand-primary text-xs"></i> São Paulo, SP
+      </p>
+      <h6 class="font-bold text-brand-textPrimary mb-3 text-sm">Redes Sociais</h6>
+      <div class="flex gap-2">
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary hover:bg-brand-primary/20 transition">
+          <i class="fab fa-instagram text-xs"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary hover:bg-brand-primary/20 transition">
+          <i class="fab fa-linkedin-in text-xs"></i>
+        </a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary hover:bg-brand-primary/20 transition">
+          <i class="fab fa-youtube text-xs"></i>
+        </a>
+        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary hover:bg-brand-primary/20 transition">
+          <i class="fab fa-tiktok text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gradient-rule mb-6"></div>
+
+  <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-brand-textMuted">
+    <p>© 2026 Nexo Digital. Todos os direitos reservados.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-brand-primary transition">Termos de Uso</a>
+      <a href="#" class="hover:text-brand-primary transition">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ================================================================
+     POPUP DE CAPTURA
+================================================================ -->
+<div id="popup-captura"
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+  aria-hidden="true">
+  <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 md:p-10">
+    <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent rounded-t-2xl"></div>
+
+    <button type="button" onclick="fecharPopup()" aria-label="Fechar"
+      class="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-bg/50 flex items-center justify-center text-brand-textMuted hover:text-brand-primary transition">
+      <i class="fas fa-times text-xs"></i>
+    </button>
+
+    <div class="text-center mb-6">
+      <div class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-brand-primary/10 border border-brand-primary/30 mb-4">
+        <i class="fas fa-rocket text-brand-primary"></i>
+      </div>
+      <p class="text-brand-primary font-semibold text-xs mb-1">Vamos conversar</p>
+      <h3 class="font-bold text-2xl text-brand-textPrimary mb-1">Solicite uma proposta</h3>
+      <p class="text-sm text-brand-textMuted">Nossa equipe retorna em até 1 dia útil.</p>
+    </div>
+
+    <form id="form-captura" class="space-y-4">
+      <input type="text" id="lead-nome" name="nome" placeholder="Nome completo" required
+        class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+
+      <input type="email" id="lead-email" name="email" placeholder="E-mail" required
+        class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+
+      <div class="flex items-stretch">
+        <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-brand-border/25 bg-brand-bg text-brand-textMuted text-sm">+55</span>
+        <input type="tel" id="lead-telefone" name="telefone" placeholder="(11) 99999-9999" required maxlength="15"
+          class="w-full bg-brand-bg border border-brand-border/25 rounded-r-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+      </div>
+
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_term" name="utm_term">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_content" name="utm_content">
+      <input type="hidden" id="url" name="url">
+
+      <p class="error-msg text-red-400 text-xs hidden">Informe o DDD e o número completo.</p>
+
+      <button type="submit"
+        class="btn-submit w-full split-btn flex items-center justify-center gap-3 bg-brand-primary text-brand-bg font-bold text-sm rounded-full py-4 hover:bg-brand-primaryHover transition">
+        Enviar Solicitação
+      </button>
+      <p class="text-center text-brand-textMuted text-xs">Sem spam. Seus dados estão seguros.</p>
+    </form>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     MOBILE FLOAT CTA
+================================================================ -->
+<div class="mobile-float lg:hidden">
+  <button onclick="abrirPopup()"
+    class="split-btn w-full inline-flex items-center justify-between rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+    <span class="px-6 py-2.5 text-sm font-bold text-brand-bg flex-1 text-center">Solicitar Proposta Grátis</span>
+    <span class="btn-icon w-9 h-9 rounded-full bg-brand-bg/20 flex items-center justify-center">
+      <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+    </span>
+  </button>
+</div>
+
+
+<!-- ================================================================
+     SCRIPTS
+================================================================ -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// ── AOS
+AOS.init({ duration: 650, once: true, offset: 60 });
+
+// ── POPUP
+const popup = document.getElementById('popup-captura');
+function abrirPopup() {
+  popup.classList.remove('hidden');
+  popup.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  popup.setAttribute('aria-hidden','false');
+}
+function fecharPopup() {
+  popup.classList.add('hidden');
+  popup.classList.remove('flex');
+  document.body.style.overflow = '';
+  popup.setAttribute('aria-hidden','true');
+}
+popup.addEventListener('click', e => { if (e.target === popup) fecharPopup(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharPopup(); });
+
+// ── MOBILE MENU
+const mobileMenu = document.getElementById('mobile-menu');
+const menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  document.getElementById('mob-services-sub')?.classList.remove('open');
+  document.getElementById('mob-services-chevron')?.classList.remove('open');
+}
+function toggleMobServices() {
+  document.getElementById('mob-services-sub').classList.toggle('open');
+  document.getElementById('mob-services-chevron').classList.toggle('open');
+}
+
+// ── STICKY HEADER
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── THEME TOGGLE
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  themeToggle.querySelector('i').className = isLight ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
+});
+
+// ── FAQ
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(f => f.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+// ── UTM FILL
+(function fillUTMs() {
+  const p = new URLSearchParams(window.location.search);
+  ['utm_source','utm_term','utm_campaign','utm_medium','utm_content'].forEach(k => {
+    const el = document.getElementById(k);
+    if (el) el.value = p.get(k) || '';
+  });
+  const urlEl = document.getElementById('url');
+  if (urlEl) urlEl.value = window.location.href;
+})();
+
+// ── PHONE MASK
+const telInput = document.getElementById('lead-telefone');
+telInput.addEventListener('input', function(e) {
+  let v = e.target.value.replace(/\D/g,'');
+  if (v.startsWith('55') && v.length > 2) v = v.slice(2);
+  v = v.slice(0,11);
+  let f = v;
+  if (v.length > 2) f = `(${v.slice(0,2)}) ${v.slice(2)}`;
+  if (v.length > 7) f = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  e.target.value = f;
+  document.querySelector('.error-msg')?.classList.add('hidden');
+});
+
+// ── FORM SUBMIT
+document.getElementById('form-captura').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.btn-submit');
+  const err = this.querySelector('.error-msg');
+  const raw = telInput.value.replace(/\D/g,'');
+  if (raw.length < 10) { err.classList.remove('hidden'); telInput.focus(); return; }
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Enviando...';
+  const payload = {
+    nome: document.getElementById('lead-nome').value.trim(),
+    email: document.getElementById('lead-email').value.trim(),
+    telefone: '+55'+raw,
+    utm_source: document.getElementById('utm_source')?.value||'',
+    utm_term: document.getElementById('utm_term')?.value||'',
+    utm_campaign: document.getElementById('utm_campaign')?.value||'',
+    utm_medium: document.getElementById('utm_medium')?.value||'',
+    utm_content: document.getElementById('utm_content')?.value||'',
+    url: document.getElementById('url')?.value||window.location.href
+  };
+  const WEBHOOK_URL = 'WEBHOOK_DO_PROJETO'; // ← definir Make / n8n
+  try {
+    await fetch(WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), mode:'no-cors' });
+  } catch(err) { console.error(err); }
+  finally {
+    fecharPopup();
+    btn.disabled = false;
+    btn.innerHTML = 'Enviar Solicitação';
+    this.reset();
+  }
+});
+
+// ── COUNTER ANIMATION
+function animateCounters() {
+  document.querySelectorAll('[data-counter]').forEach(el => {
+    const target = parseInt(el.dataset.counter);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    let current = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = prefix + current + suffix;
+      if (current >= target) clearInterval(timer);
+    }, 25);
+  });
+}
+const statsSection = document.querySelector('[data-counter]');
+if (statsSection) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { animateCounters(); obs.disconnect(); }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(statsSection);
+}
+
+// ── NEWSLETTER
+function handleNewsletter(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.innerHTML = '<span class="text-sm font-semibold text-brand-textPrimary">Inscrito!</span><span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center"><i class="fas fa-check text-brand-bg text-xs"></i></span>';
+  setTimeout(() => {
+    btn.innerHTML = '<span class="text-sm font-semibold text-brand-textPrimary">Inscrever</span><span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-xs"></i></span>';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
