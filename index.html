@@ -743,11 +743,11 @@
 
       <div class="relative" data-aos="fade-left" data-aos-delay="100">
         <div class="grid grid-cols-2 gap-4">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80"
+          <img src="assets/01.webp"
                alt="Time Nexo Digital" class="rounded-2xl w-full h-48 object-cover col-span-2">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80"
+          <img src="assets/02.webp"
                alt="Estratégia" class="rounded-2xl w-full h-36 object-cover">
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80"
+          <img src="assets/03.webp"
                alt="Execução" class="rounded-2xl w-full h-36 object-cover">
         </div>
         <div class="photo-overlap-card">
@@ -819,7 +819,7 @@
 ================================================================ -->
 <section class="py-12 md:py-16 px-4 md:px-6">
   <div class="relative rounded-3xl overflow-hidden min-h-[420px] flex items-center" data-aos="fade-up">
-    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80"
+    <img src="assets/04.webp"
          alt="Diagnóstico Nexo" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-brand-bg/75"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-brand-bg/99 via-brand-bg/90 to-brand-bg/50"></div>
@@ -1142,7 +1142,7 @@
           <p class="text-4xl font-extrabold text-brand-textPrimary mb-1">R$&nbsp;3.000 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
           <p class="text-brand-primary font-semibold text-sm mb-4" data-i18n="pricing.p1_tag">Posicionamento e presença digital</p>
           <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">Pra quem já vende, mas o Instagram e a comunicação visual não representam o tamanho do negócio.</p>
-          <button onclick="abrirPopup()"
+          <button onclick="abrirPopup('start')"
             class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
             <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary" data-i18n="pricing.p1_cta">Organizar minha presença digital</span>
             <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0">
@@ -1186,7 +1186,7 @@
           <p class="text-4xl font-extrabold text-brand-textPrimary mb-1">R$&nbsp;5.000 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
           <p class="text-brand-primary font-semibold text-sm mb-4" data-i18n="pricing.p2_tag">Presença digital + página vendendo</p>
           <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">Tudo do Start, mais uma porta de conversão real.</p>
-          <button onclick="abrirPopup()"
+          <button onclick="abrirPopup('growth')"
             class="split-btn inline-flex items-center justify-between w-full rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
             <span class="px-5 py-2.5 text-sm font-bold text-brand-bg" data-i18n="pricing.p2_cta">Quero conectar conteúdo e venda</span>
             <span class="btn-icon w-9 h-9 rounded-full bg-brand-bg/20 flex items-center justify-center flex-shrink-0">
@@ -1225,7 +1225,7 @@
           <p class="text-4xl font-extrabold text-brand-textPrimary mb-1">R$&nbsp;7.500 <span class="text-sm text-brand-textMuted font-normal">/mês</span></p>
           <p class="text-brand-primary font-semibold text-sm mb-4" data-i18n="pricing.p3_tag">Funil completo + tráfego pago</p>
           <p class="text-brand-textSecondary text-sm leading-relaxed mb-6">Tudo dos planos anteriores, com funil completo e mídia paga.</p>
-          <button onclick="abrirPopup()"
+          <button onclick="abrirPopup('machine')"
             class="split-btn inline-flex items-center justify-between w-full rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
             <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary" data-i18n="pricing.p3_cta">Quero uma máquina de aquisição</span>
             <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center flex-shrink-0">
@@ -1578,7 +1578,7 @@
 <div id="popup-captura"
   class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
   aria-hidden="true">
-  <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 md:p-10">
+  <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 md:p-10 overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent rounded-t-2xl"></div>
 
     <button type="button" onclick="fecharPopup()" aria-label="Fechar"
@@ -1651,7 +1651,15 @@ AOS.init({ duration: 650, once: true, offset: 60 });
 
 // ── POPUP
 const popup = document.getElementById('popup-captura');
-function abrirPopup() {
+const WA_URLS = {
+  start:  'https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Start%20%E2%80%94%20organizar%20minha%20presen%C3%A7a%20digital.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F',
+  growth: 'https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Growth%20%E2%80%94%20presen%C3%A7a%20digital%20%2B%20p%C3%A1gina%20vendendo.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F',
+  machine:'https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Machine%20%E2%80%94%20funil%20completo%20%2B%20tr%C3%A1fego%20pago.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F',
+  default:'https://wa.me/5535991661854'
+};
+var _activePlan = 'default';
+function abrirPopup(plan) {
+  _activePlan = plan || 'default';
   popup.classList.remove('hidden');
   popup.classList.add('flex');
   document.body.style.overflow = 'hidden';
@@ -1747,6 +1755,7 @@ document.getElementById('form-captura').addEventListener('submit', async functio
     url: document.getElementById('url')?.value||window.location.href
   };
   const WEBHOOK_URL = 'WEBHOOK_DO_PROJETO'; // ← definir Make / n8n
+  const redirectUrl = WA_URLS[_activePlan] || WA_URLS.default;
   try {
     await fetch(WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), mode:'no-cors' });
   } catch(err) { console.error(err); }
@@ -1755,6 +1764,7 @@ document.getElementById('form-captura').addEventListener('submit', async functio
     btn.disabled = false;
     btn.innerHTML = 'Enviar Solicitação';
     this.reset();
+    window.open(redirectUrl, '_blank');
   }
 });
 
