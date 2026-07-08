@@ -29,7 +29,7 @@
     .hero-line-3{animation:fade-up .6s .4s ease-out both;}.hero-line-4{animation:fade-up .6s .55s ease-out both;}
     #main-header{position:sticky;top:0;z-index:40;transition:background .3s;}#main-header.scrolled{background:rgba(11,13,17,.97)!important;}
     #mobile-menu{max-height:0;overflow:hidden;transition:max-height .4s ease;}#mobile-menu.open{max-height:700px;}
-    .mega-trigger{position:relative;}.mega-menu-wrap{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%) translateY(14px);width:820px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:200;}
+    .mega-trigger{position:relative;}.mega-menu-wrap{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%) translateY(14px);width:960px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:200;}
     .mega-trigger:hover .mega-menu-wrap{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
     .mega-menu-arrow{position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#222A31;border-left:1px solid rgba(217,255,106,.2);border-top:1px solid rgba(217,255,106,.2);}
     .mega-service-item{display:flex;align-items:flex-start;gap:.75rem;padding:.85rem 1rem;border-radius:14px;transition:background .2s;text-decoration:none;}
@@ -55,9 +55,14 @@
     @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
     @keyframes spin-rev  { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
     #mob-services-sub { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-    #mob-services-sub.open { max-height:400px; }
+    #mob-services-sub.open { max-height:620px; }
     #mob-services-chevron { transition:transform .3s ease; }
     #mob-services-chevron.open { transform:rotate(180deg); }
+    /* ── LANG SWITCHER ── */
+    .lang-btn { padding:2px 6px; border-radius:6px; font-size:11px; font-weight:700; letter-spacing:.05em; color:var(--brand-muted); transition:color .2s; cursor:pointer; background:none; border:none; }
+    .lang-btn:hover { color:var(--brand-primary); }
+    .lang-btn.lang-active { color:var(--brand-primary); background:rgba(217,255,106,.1); }
+    .lang-sep { color:var(--brand-muted); opacity:.35; font-size:10px; }
   </style>
 </head>
 <body class="bg-brand-bg text-brand-textPrimary font-sans antialiased">
@@ -77,9 +82,18 @@
             <a href="../crm-funis/" class="mega-service-item" style="background:rgba(217,255,106,.06)"><div class="mega-icon" style="background:rgba(217,255,106,.15)"><i class="fas fa-filter"></i></div><div><p class="font-semibold text-brand-primary text-sm mb-0.5">CRM & Funis</p><p class="text-brand-textMuted text-xs">HubSpot, RD, Pipedrive</p></div></a>
             <a href="../social-media/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-share-nodes"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Social Media</p><p class="text-brand-textMuted text-xs">Gestão e crescimento</p></div></a>
             <a href="../seo-conteudo/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-magnifying-glass-chart"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">SEO & Conteúdo</p><p class="text-brand-textMuted text-xs">Rank orgânico</p></div></a>
-            <div class="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1"><a href="../../#servicos" class="flex items-center gap-2 text-xs text-brand-primary font-semibold"><i class="fas fa-grid-2 text-[10px]"></i> Ver todos <i class="fas fa-arrow-right text-[10px]"></i></a></div>
+<div class="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1"><a href="../../#servicos" class="flex items-center gap-2 text-xs text-brand-primary font-semibold"><i class="fas fa-grid-2 text-[10px]"></i> Ver todos <i class="fas fa-arrow-right text-[10px]"></i></a></div>
           </div>
-          <div class="bg-brand-bg/60 border-l border-brand-primary/10 p-6 flex flex-col justify-between"><div><p class="text-[10px] font-semibold text-brand-primary uppercase tracking-wider mb-2">Diagnóstico Grátis</p><h4 class="font-bold text-brand-textPrimary text-sm leading-snug mb-3">Descubra onde perde dinheiro</h4><button onclick="abrirPopup()" class="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition"><span class="px-4 py-2 text-xs font-bold text-brand-bg">Agendar</span><span class="btn-icon w-7 h-7 rounded-full bg-brand-bg/20 flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-[10px]"></i></span></button></div><div class="mt-6 pt-5 border-t border-brand-border/10 space-y-2"><div class="flex items-center gap-2 text-xs text-brand-textMuted"><i class="fas fa-check text-brand-primary text-[10px]"></i> +150 clientes</div></div></div></div></div>
+          <div class="bg-brand-bg/60 border-l border-brand-primary/10 p-6 flex flex-col justify-between"><div><p class="text-[10px] font-semibold text-brand-primary uppercase tracking-wider mb-2">Diagnóstico Grátis</p><h4 class="font-bold text-brand-textPrimary text-sm leading-snug mb-3">Descubra onde perde dinheiro</h4><button onclick="abrirPopup()" class="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition"><span class="px-4 py-2 text-xs font-bold text-brand-bg">Agendar</span><span class="btn-icon w-7 h-7 rounded-full bg-brand-bg/20 flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-[10px]"></i></span></button></div><div class="mt-6 pt-5 border-t border-brand-border/10 space-y-2"><div class="flex items-center gap-2 text-xs text-brand-textMuted"><i class="fas fa-check text-brand-primary text-[10px]"></i> +150 clientes</div></div></div></div>
+          <div class="border-t border-brand-primary/10 px-4 py-3">
+            <p class="text-[9px] text-brand-textMuted font-semibold uppercase tracking-wider mb-2 px-1">Produção &amp; Design</p>
+            <div class="grid grid-cols-3 gap-1">
+              <a href="../design-identidade/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-palette"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Design e Identidade Visual</p><p class="text-brand-textMuted text-xs">Logotipo, visual e criativos</p></div></a>
+              <a href="../edicao-video/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-video"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Edição de Vídeo</p><p class="text-brand-textMuted text-xs">Reels, shorts e anúncios</p></div></a>
+              <a href="../sites-paginas/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-globe"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Sites, Páginas e Checkouts</p><p class="text-brand-textMuted text-xs">Landing pages e conversão</p></div></a>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
       <a href="../../#cases" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-trophy"></i> Cases</a>
@@ -88,7 +102,15 @@
     </nav>
     <div class="flex items-center gap-3">
       <button onclick="abrirPopup()" class="split-btn hidden md:inline-flex items-center rounded-full bg-brand-bg/40 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition"><span class="px-5 py-2.5 text-sm font-semibold">Fale Conosco</span><span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-xs"></i></span></button>
-      <button id="menu-toggle" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary"><i class="fas fa-bars text-sm"></i></button>
+            <!-- Language Switcher -->
+      <div class="hidden md:flex items-center gap-0.5">
+        <button data-lang="pt" onclick="setLang('pt')" class="lang-btn lang-active">PT</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="en" onclick="setLang('en')" class="lang-btn">EN</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="es" onclick="setLang('es')" class="lang-btn">ES</button>
+      </div>
+<button id="menu-toggle" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary"><i class="fas fa-bars text-sm"></i></button>
     </div>
   </div>
   <div id="mobile-menu" class="lg:hidden border-t border-brand-border/10">
@@ -152,6 +174,14 @@
         </span>
       </button>
 
+      <!-- Mobile Lang -->
+      <div class="flex items-center justify-center gap-1 py-3 border-t border-brand-border/10 mt-1">
+        <button data-lang="pt" onclick="setLang('pt');closeMobileMenu()" class="lang-btn lang-active px-3 py-1.5">PT</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="en" onclick="setLang('en');closeMobileMenu()" class="lang-btn px-3 py-1.5">EN</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="es" onclick="setLang('es');closeMobileMenu()" class="lang-btn px-3 py-1.5">ES</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -182,8 +212,8 @@
   <div class="text-center mb-12" data-aos="fade-up"><p class="eyebrow justify-center"><i class="fas fa-circle-dot text-xs"></i> CRMs que Implementamos</p><h2 class="text-fade text-3xl md:text-4xl font-extrabold tracking-tight">Especialistas em</h2></div>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
     <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up"><i class="fab fa-hubspot text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">HubSpot</p><p class="text-brand-textMuted text-xs">CRM + Marketing Hub</p></div>
-    <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-p text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">Pipedrive</p><p class="text-brand-textMuted text-xs">Pipeline visual & automações</p></div>
-    <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-r text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">RD Station</p><p class="text-brand-textMuted text-xs">Leads & oportunidades</p></div>
+    <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up" data-aos-delay="80"><i class="fas fa-diagram-project text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">Pipedrive</p><p class="text-brand-textMuted text-xs">Pipeline visual & automações</p></div>
+    <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up" data-aos-delay="160"><i class="fas fa-bullseye text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">RD Station</p><p class="text-brand-textMuted text-xs">Leads & oportunidades</p></div>
     <div class="card-lift bg-brand-surface border border-brand-border/15 rounded-2xl p-7 text-center" data-aos="fade-up" data-aos-delay="240"><i class="fab fa-salesforce text-4xl text-brand-primary mb-4 block"></i><p class="font-bold text-brand-textPrimary text-sm mb-1">Salesforce</p><p class="text-brand-textMuted text-xs">Enterprise & customizações</p></div>
   </div>
 </div></section>
@@ -214,7 +244,7 @@
 
 <footer class="mx-4 md:mx-6 mb-4 rounded-t-3xl border border-b-0 border-brand-primary/15 bg-brand-surface pt-10 pb-6 px-8"><div class="gradient-rule mb-6"></div><div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-brand-textMuted"><a href="../../"><img src="../../assets/logoNexo.svg" alt="Nexo Digital" class="h-8 w-auto mb-3 md:mb-0"></a><p>© 2026 Nexo Digital.</p><div class="flex gap-6"><a href="#" class="hover:text-brand-primary transition">Termos</a><a href="#" class="hover:text-brand-primary transition">Privacidade</a></div></div></footer>
 
-<div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm"><div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8"><div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent rounded-t-2xl"></div><button onclick="fecharPopup()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-bg/50 flex items-center justify-center text-brand-textMuted hover:text-brand-primary transition"><i class="fas fa-times text-xs"></i></button><div class="text-center mb-6"><p class="text-brand-primary font-semibold text-xs mb-1">Vamos conversar</p><h3 class="font-bold text-2xl text-brand-textPrimary mb-1">Solicite uma proposta</h3></div><form id="form-captura" class="space-y-4"><input type="text" placeholder="Nome completo" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><input type="email" placeholder="E-mail" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><input type="tel" placeholder="(11) 99999-9999" class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><button type="submit" class="w-full bg-brand-primary text-brand-bg font-bold text-sm rounded-full py-4 hover:bg-brand-primaryHover transition">Enviar Solicitação</button></form></div></div>
+<div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm"><div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 overflow-hidden"><div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent"></div><button onclick="fecharPopup()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-bg/50 flex items-center justify-center text-brand-textMuted hover:text-brand-primary transition"><i class="fas fa-times text-xs"></i></button><div class="text-center mb-6"><p class="text-brand-primary font-semibold text-xs mb-1">Vamos conversar</p><h3 class="font-bold text-2xl text-brand-textPrimary mb-1">Solicite uma proposta</h3></div><form id="form-captura" class="space-y-4"><input type="text" placeholder="Nome completo" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><input type="email" placeholder="E-mail" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><input type="tel" placeholder="(11) 99999-9999" class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition"><button type="submit" class="w-full bg-brand-primary text-brand-bg font-bold text-sm rounded-full py-4 hover:bg-brand-primaryHover transition">Enviar Solicitação</button></form></div></div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -226,7 +256,14 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharPopup();});
   document.getElementById('menu-toggle').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
   window.addEventListener('scroll',()=>document.getElementById('main-header').classList.toggle('scrolled',window.scrollY>40));
+    function toggleMobServices(){
+    const sub=document.getElementById('mob-services-sub');
+    const ch=document.getElementById('mob-services-chevron');
+    sub.classList.toggle('open'); ch.classList.toggle('open');
+  }
   document.getElementById('form-captura').addEventListener('submit',e=>{e.preventDefault();fecharPopup();});
 </script>
+<script src="../../js/translations.js"></script>
+<script src="../../js/i18n.js"></script>
 </body>
 </html>
