@@ -229,6 +229,15 @@ pt: {
     rights: '© 2026 Nexo Digital. Todos os direitos reservados.',
     terms: 'Termos de Uso',
     privacy: 'Política de Privacidade',
+    cookies: 'Política de Cookies',
+    cookie_prefs: 'Preferências de Cookies',
+  },
+
+  cookies: {
+    msg: 'Usamos cookies para melhorar sua experiência, medir desempenho e personalizar conteúdo, em conformidade com a LGPD. Ao continuar navegando, você concorda com nossa',
+    link: 'Política de Cookies',
+    accept: 'Aceitar todos',
+    reject: 'Somente essenciais',
   },
 
   popup: {
@@ -475,6 +484,15 @@ en: {
     rights: '© 2026 Nexo Digital. All rights reserved.',
     terms: 'Terms of Use',
     privacy: 'Privacy Policy',
+    cookies: 'Cookie Policy',
+    cookie_prefs: 'Cookie Preferences',
+  },
+
+  cookies: {
+    msg: 'We use cookies to improve your experience, measure performance and personalize content, in compliance with LGPD. By continuing to browse, you agree to our',
+    link: 'Cookie Policy',
+    accept: 'Accept all',
+    reject: 'Essential only',
   },
 
   popup: {
@@ -721,6 +739,15 @@ es: {
     rights: '© 2026 Nexo Digital. Todos los derechos reservados.',
     terms: 'Términos de Uso',
     privacy: 'Política de Privacidad',
+    cookies: 'Política de Cookies',
+    cookie_prefs: 'Preferencias de Cookies',
+  },
+
+  cookies: {
+    msg: 'Usamos cookies para mejorar tu experiencia, medir el rendimiento y personalizar contenido, en cumplimiento con la LGPD. Al continuar navegando, aceptas nuestra',
+    link: 'Política de Cookies',
+    accept: 'Aceptar todo',
+    reject: 'Solo esenciales',
   },
 
   popup: {

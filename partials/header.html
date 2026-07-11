@@ -1,0 +1,280 @@
+<header id="main-header" class="w-full bg-brand-bg/90 border-b border-brand-border/10 glass">
+  <div class="container mx-auto px-6 max-w-site flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 flex-shrink-0">
+      <img src="/assets/logoNexo.svg" alt="Nexo Digital" class="h-14 w-auto">
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-brand-textPrimary">
+
+      <a href="/#home" class="nav-link hover:text-brand-primary transition duration-200" data-nav="home">
+        <i class="nav-icon fas fa-house"></i> <span data-i18n="nav.home">Home</span>
+      </a>
+
+      <a href="/#sobre" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-users"></i> <span data-i18n="nav.about">Sobre</span>
+      </a>
+
+      <!-- MEGA MENU SERVIÇOS -->
+      <div class="mega-trigger">
+        <button class="nav-link hover:text-brand-primary transition duration-200 cursor-pointer select-none" aria-haspopup="true" aria-expanded="false">
+          <i class="nav-icon fas fa-briefcase"></i> <span data-i18n="nav.services">Serviços</span>
+          <i class="fas fa-chevron-down text-[9px] ml-0.5 opacity-60"></i>
+        </button>
+
+        <div class="mega-menu-wrap">
+          <div class="mega-menu-arrow"></div>
+          <div class="bg-brand-surface border border-brand-primary/20 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,.55)] overflow-hidden">
+            <div class="grid grid-cols-3">
+
+              <!-- Services grid (2 cols) -->
+              <div class="col-span-2 p-3 grid grid-cols-2 gap-1 content-start">
+
+                <a href="/servicos/trafego-pago/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-chart-bar"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Tráfego Pago</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Google, Meta, TikTok & LinkedIn Ads</p>
+                  </div>
+                </a>
+
+                <a href="/servicos/email-marketing/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-envelope-open-text"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">E-mail Marketing</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Sequências, A/B e reativação</p>
+                  </div>
+                </a>
+
+                <a href="/servicos/automacao/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-robot"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Automação de Marketing</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Fluxos, lead scoring e integrações</p>
+                  </div>
+                </a>
+
+                <a href="/servicos/crm-funis/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-filter"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">CRM & Funis de Vendas</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">HubSpot, RD, Pipedrive</p>
+                  </div>
+                </a>
+
+                <a href="/servicos/social-media/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-share-nodes"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">Social Media</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Gestão, conteúdo e crescimento</p>
+                  </div>
+                </a>
+
+                <a href="/servicos/seo-conteudo/" class="mega-service-item">
+                  <div class="mega-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                  <div>
+                    <p class="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">SEO & Conteúdo</p>
+                    <p class="text-brand-textMuted text-xs leading-snug">Rank orgânico e autoridade</p>
+                  </div>
+                </a>
+
+                <!-- View all -->
+                <div class="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1">
+                  <a href="/#servicos" class="flex items-center gap-2 text-xs text-brand-primary font-semibold hover:gap-3 transition-all duration-200">
+                    <i class="fas fa-grid-2 text-[10px]"></i> <span data-i18n="nav.see_all">Ver todos os serviços</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Right CTA panel -->
+              <div class="bg-brand-bg/60 border-l border-brand-primary/10 p-6 flex flex-col justify-between">
+                <div>
+                  <p class="text-[10px] font-semibold text-brand-primary uppercase tracking-wider mb-2" data-i18n="nav.mega_diag_eyebrow">Diagnóstico Grátis</p>
+                  <h4 class="font-bold text-brand-textPrimary text-sm leading-snug mb-3" data-i18n="nav.mega_diag_title">Descubra onde seu marketing está perdendo dinheiro</h4>
+                  <p class="text-brand-textMuted text-xs leading-relaxed mb-5" data-i18n="nav.mega_diag_desc">Auditoria completa em 48h. Sem compromisso.</p>
+                  <button onclick="abrirPopup()"
+                    class="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition">
+                    <span class="px-4 py-2 text-xs font-bold text-brand-bg" data-i18n="nav.mega_diag_cta">Agendar agora</span>
+                    <span class="btn-icon w-7 h-7 rounded-full bg-brand-bg/20 flex items-center justify-center">
+                      <i class="fas fa-arrow-right text-brand-bg text-[10px]"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="mt-6 pt-5 border-t border-brand-border/10 space-y-2">
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> <span data-i18n="nav.mega_stat1">+150 clientes atendidos</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> <span data-i18n="nav.mega_stat2">R$47M gerenciados em mídia</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-brand-textMuted">
+                    <i class="fas fa-check text-brand-primary text-[10px]"></i> <span data-i18n="nav.mega_stat3">97% taxa de retenção</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="border-t border-brand-primary/10 px-4 py-3">
+              <p class="text-[9px] text-brand-textMuted font-semibold uppercase tracking-wider mb-2 px-1" data-i18n="nav.mega_label">Produção &amp; Design</p>
+              <div class="grid grid-cols-3 gap-1">
+                <a href="/servicos/design-identidade/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-palette"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Design e Identidade Visual</p><p class="text-brand-textMuted text-xs">Logotipo, visual e criativos</p></div></a>
+                <a href="/servicos/edicao-video/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-video"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Edição de Vídeo</p><p class="text-brand-textMuted text-xs">Reels, shorts e anúncios</p></div></a>
+                <a href="/servicos/sites-paginas/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-globe"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Sites, Páginas e Checkouts</p><p class="text-brand-textMuted text-xs">Landing pages e conversão</p></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /MEGA MENU -->
+
+      <a href="/#cases" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-trophy"></i> <span data-i18n="nav.cases">Cases</span>
+      </a>
+
+      <a href="/#pricing" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-tag"></i> <span data-i18n="nav.plans">Planos</span>
+      </a>
+
+      <a href="/#contato" class="nav-link hover:text-brand-primary transition duration-200">
+        <i class="nav-icon fas fa-message"></i> <span data-i18n="nav.contact">Contato</span>
+      </a>
+
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-3">
+      <button onclick="abrirPopup()"
+        class="split-btn hidden md:inline-flex items-center rounded-full bg-brand-bg/40 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition">
+        <span class="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary" data-i18n="nav.cta">Fale Conosco</span>
+        <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+          <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+        </span>
+      </button>
+      <!-- Language Switcher -->
+      <div class="hidden md:flex items-center gap-0.5">
+        <button data-lang="pt" onclick="setLang('pt')" class="lang-btn lang-active">PT</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="en" onclick="setLang('en')" class="lang-btn">EN</button>
+        <span class="lang-sep">|</span>
+        <button data-lang="es" onclick="setLang('es')" class="lang-btn">ES</button>
+      </div>
+      <!-- Hamburger -->
+      <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary hover:text-brand-primary transition">
+        <i class="fas fa-bars text-base"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu backdrop -->
+<div id="mobile-menu-overlay" class="mobile-menu-overlay lg:hidden"></div>
+
+<!-- Mobile menu — right-side drawer -->
+<aside id="mobile-menu" class="lg:hidden" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 h-20 border-b border-brand-border/10 flex-shrink-0">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/assets/logoNexo.svg" alt="Nexo Digital" class="h-10 w-auto">
+    </a>
+    <button id="menu-close" aria-label="Fechar menu" class="w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary hover:text-brand-primary transition">
+      <i class="fas fa-xmark text-lg"></i>
+    </button>
+  </div>
+  <nav class="px-6 py-4 flex flex-col gap-1 text-sm font-medium flex-1">
+
+    <a href="/#home" onclick="closeMobileMenu()"
+      class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+      <i class="nav-icon fas fa-house w-4 text-center"></i> <span data-i18n="nav.home">Home</span>
+    </a>
+
+    <a href="/#sobre" onclick="closeMobileMenu()"
+      class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+      <i class="nav-icon fas fa-users w-4 text-center"></i> <span data-i18n="nav.about">Sobre</span>
+    </a>
+
+    <!-- Mobile services accordion -->
+    <div>
+      <button onclick="toggleMobServices()"
+        class="nav-link w-full hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60 justify-between">
+        <span class="flex items-center gap-1.5">
+          <i class="nav-icon fas fa-briefcase w-4 text-center"></i> <span data-i18n="nav.services">Serviços</span>
+        </span>
+        <i id="mob-services-chevron" class="fas fa-chevron-down text-[10px] opacity-60"></i>
+      </button>
+      <div id="mob-services-sub">
+        <div class="border-l border-brand-primary/20 pl-4 ml-3 space-y-1 py-2">
+          <a href="/servicos/trafego-pago/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-chart-bar text-brand-primary text-xs w-4 text-center"></i> Tráfego Pago
+          </a>
+          <a href="/servicos/automacao/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-robot text-brand-primary text-xs w-4 text-center"></i> Automação de Marketing
+          </a>
+          <a href="/servicos/social-media/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-share-nodes text-brand-primary text-xs w-4 text-center"></i> Social Media
+          </a>
+          <a href="/servicos/email-marketing/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-envelope-open-text text-brand-primary text-xs w-4 text-center"></i> E-mail Marketing
+          </a>
+          <a href="/servicos/crm-funis/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-filter text-brand-primary text-xs w-4 text-center"></i> CRM & Funis
+          </a>
+          <a href="/servicos/seo-conteudo/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-magnifying-glass-chart text-brand-primary text-xs w-4 text-center"></i> SEO & Conteúdo
+          </a>
+          <a href="/servicos/design-identidade/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-palette text-brand-primary text-xs w-4 text-center"></i> Design e Identidade Visual
+          </a>
+          <a href="/servicos/edicao-video/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-video text-brand-primary text-xs w-4 text-center"></i> Edição de Vídeo
+          </a>
+          <a href="/servicos/sites-paginas/" onclick="closeMobileMenu()"
+            class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition">
+            <i class="fas fa-globe text-brand-primary text-xs w-4 text-center"></i> Sites, Páginas e Checkouts
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/#cases" onclick="closeMobileMenu()"
+      class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+      <i class="nav-icon fas fa-trophy w-4 text-center"></i> <span data-i18n="nav.cases">Cases</span>
+    </a>
+
+    <a href="/#pricing" onclick="closeMobileMenu()"
+      class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+      <i class="nav-icon fas fa-tag w-4 text-center"></i> <span data-i18n="nav.plans">Planos</span>
+    </a>
+
+    <a href="/#contato" onclick="closeMobileMenu()"
+      class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60">
+      <i class="nav-icon fas fa-message w-4 text-center"></i> <span data-i18n="nav.contact">Contato</span>
+    </a>
+
+    <button onclick="abrirPopup();closeMobileMenu()"
+      class="mt-3 w-full split-btn inline-flex items-center justify-between rounded-full border border-brand-primary/40 p-1">
+      <span class="px-5 py-2.5 text-sm font-semibold flex-1 text-center" data-i18n="nav.mob_cta">Solicitar Proposta</span>
+      <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
+        <i class="fas fa-arrow-right text-brand-bg text-xs"></i>
+      </span>
+    </button>
+    <!-- Mobile Lang -->
+    <div class="flex items-center justify-center gap-1 py-4 border-t border-brand-border/10 mt-2">
+      <button data-lang="pt" onclick="setLang('pt');closeMobileMenu()" class="lang-btn lang-active px-3 py-1.5">PT</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="en" onclick="setLang('en');closeMobileMenu()" class="lang-btn px-3 py-1.5">EN</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="es" onclick="setLang('es');closeMobileMenu()" class="lang-btn px-3 py-1.5">ES</button>
+    </div>
+  </nav>
+</aside>

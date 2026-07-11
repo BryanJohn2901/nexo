@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edição de Vídeo | Nexo Digital</title>
@@ -7,152 +7,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="/css/site.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:{bg:'#0B0D11',surface:'#222A31',primary:'#D9FF6A',primaryHover:'#E8FEAE',accent:'#E8FEAE',textPrimary:'#D8DEE3',textSecondary:'#7B8793',textMuted:'#7B8793',border:'#7B8793'}},fontFamily:{sans:['Inter','sans-serif']},maxWidth:{site:'1300px'}}}};</script>
-  <style>body{background:#0B0D11;font-family:'Inter',sans-serif;color:#D8DEE3;overflow-x:hidden;}
-    .text-fade{background:linear-gradient(90deg,#D8DEE3 0%,#D8DEE3 55%,rgba(216,222,227,.18) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .card-lift{transition:transform .3s ease,box-shadow .3s ease;}.card-lift:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
-    .split-btn .btn-icon{transition:transform .25s ease;}.split-btn:hover .btn-icon{transform:scale(1.12);}
-    .check-item{display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#D8DEE3;}
-    .check-dot{width:20px;height:20px;border-radius:50%;border:1px solid #D9FF6A;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:#D9FF6A;margin-bottom:.75rem;}
-    .glass{background:rgba(11,13,17,.88);backdrop-filter:blur(14px);}
-    .gradient-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(217,255,106,.3),transparent);}
-    .stat-stroke{font-weight:800;-webkit-text-stroke:1.5px #D9FF6A;color:transparent;}
-    .glow-card{animation:border-glow 3.5s ease-in-out infinite;}
-    @keyframes border-glow{0%,100%{box-shadow:0 0 18px rgba(217,255,106,.1)}50%{box-shadow:0 0 36px rgba(217,255,106,.28)}}
-    @keyframes glow-pulse{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.5;transform:scale(1.1)}}
-    @keyframes fade-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes float-a{0%,100%{transform:translateY(0) rotate(0deg)}40%{transform:translateY(-22px) rotate(4deg)}70%{transform:translateY(-12px) rotate(-2deg)}}
-    @keyframes float-b{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
-    @keyframes float-c{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.04)}}
-    @keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-    @keyframes spin-rev{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
-    .glow-pulse{animation:glow-pulse 3s ease-in-out infinite;}
-    .float-b{animation:float-b 6s ease-in-out infinite;}
-    .float-c{animation:float-c 4.5s ease-in-out infinite;}
-    .spin-slow{animation:spin-slow 22s linear infinite;}
-    .spin-rev{animation:spin-rev 18s linear infinite;}
-    .hero-line-1{animation:fade-up .6s .1s ease-out both;}.hero-line-2{animation:fade-up .6s .25s ease-out both;}
-    .hero-line-3{animation:fade-up .6s .4s ease-out both;}.hero-line-4{animation:fade-up .6s .55s ease-out both;}
-    #main-header{position:sticky;top:0;z-index:40;transition:background .3s;}#main-header.scrolled{background:rgba(11,13,17,.97)!important;}
-    #mobile-menu{max-height:0;overflow:hidden;transition:max-height .4s ease;}#mobile-menu.open{max-height:800px;}
-    #mob-services-sub{max-height:0;overflow:hidden;transition:max-height .35s ease;}#mob-services-sub.open{max-height:620px;}
-    #mob-services-chevron{transition:transform .3s ease;}#mob-services-chevron.open{transform:rotate(180deg);}
-    .mega-trigger{position:relative;}.mega-menu-wrap{position:absolute;top:calc(100% + 1.25rem);left:50%;transform:translateX(-50%) translateY(14px);width:880px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:200;}
-    .mega-trigger:hover .mega-menu-wrap{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
-    .mega-menu-arrow{position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#222A31;border-left:1px solid rgba(217,255,106,.2);border-top:1px solid rgba(217,255,106,.2);}
-    .mega-service-item{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem .85rem;border-radius:14px;transition:background .2s;text-decoration:none;}
-    .mega-service-item:hover{background:rgba(217,255,106,.06);}.mega-service-item:hover .mega-icon{background:rgba(217,255,106,.15);}
-    .mega-icon{width:36px;height:36px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(217,255,106,.07);border:1px solid rgba(217,255,106,.25);color:#D9FF6A;font-size:13px;transition:background .2s;}
-    .nav-link{display:flex;align-items:center;gap:6px;}.nav-icon{color:#D9FF6A;font-size:10px;}
-    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;}.faq-item.open .faq-answer{max-height:260px;}
-    .faq-icon{transition:transform .3s ease;}.faq-item.open .faq-icon{transform:rotate(45deg);}
-    .hero-bg{background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(217,255,106,.07) 0%,transparent 65%),radial-gradient(ellipse 60% 50% at 20% 70%,rgba(217,255,106,.04) 0%,transparent 60%),linear-gradient(135deg,#0F1520 0%,#0B0D11 50%,#101420 100%);}</style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg:           '#0B0D11',
+              surface:      '#222A31',
+              primary:      '#D9FF6A',
+              primaryHover: '#E8FEAE',
+              accent:       '#E8FEAE',
+              textPrimary:  '#D8DEE3',
+              textSecondary:'#7B8793',
+              textMuted:    '#7B8793',
+              border:       '#7B8793',
+            },
+          },
+          fontFamily: { sans: ['Inter','sans-serif'], display: ['Inter','sans-serif'] },
+          maxWidth: { site: '1300px', 'site-md': '1040px', 'site-sm': '860px' },
+          borderRadius: { xl: '20px', '2xl': '28px', '3xl': '36px' },
+          boxShadow: {
+            card: '0 4px 24px rgba(0,0,0,.30)',
+            'card-hover': '0 8px 32px rgba(0,0,0,.40)',
+            glow: '0 0 32px rgba(217,255,106,.25)',
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body class="bg-brand-bg text-brand-textPrimary font-sans antialiased">
 
 <!-- HEADER -->
-<header id="main-header" class="w-full bg-brand-bg/90 border-b border-brand-border/10 glass">
-  <div class="container mx-auto px-6 max-w-site flex items-center justify-between h-20">
-    <a href="../../"><img src="../../assets/logoNexo.svg" alt="Nexo Digital" class="h-14 w-auto"></a>
-    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-brand-textPrimary">
-      <a href="../../" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-house"></i> Home</a>
-      <a href="../../#sobre" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-users"></i> Sobre</a>
-      <div class="mega-trigger">
-        <button class="nav-link text-brand-primary cursor-pointer"><i class="nav-icon fas fa-briefcase"></i> Serviços <i class="fas fa-chevron-down text-[9px] ml-0.5 opacity-60"></i></button>
-        <div class="mega-menu-wrap"><div class="mega-menu-arrow"></div>
-          <div class="bg-brand-surface border border-brand-primary/20 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,.55)] overflow-hidden">
-            <div class="grid grid-cols-3">
-              <div class="col-span-2 p-3 grid grid-cols-2 gap-1">
-<a href="../trafego-pago/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-chart-bar"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Tráfego Pago</p><p class="text-brand-textMuted text-xs">Google, Meta, TikTok & LinkedIn</p></div></a>
-<a href="../email-marketing/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-envelope-open-text"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">E-mail Marketing</p><p class="text-brand-textMuted text-xs">Sequências, A/B e reativação</p></div></a>
-<a href="../automacao/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-robot"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Automação de Marketing</p><p class="text-brand-textMuted text-xs">Fluxos, lead scoring e integrações</p></div></a>
-<a href="../crm-funis/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-filter"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">CRM & Funis de Vendas</p><p class="text-brand-textMuted text-xs">HubSpot, RD, Pipedrive</p></div></a>
-<a href="../social-media/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-share-nodes"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Social Media</p><p class="text-brand-textMuted text-xs">Gestão, conteúdo e crescimento</p></div></a>
-<a href="../seo-conteudo/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-magnifying-glass-chart"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">SEO & Conteúdo</p><p class="text-brand-textMuted text-xs">Rank orgânico e autoridade</p></div></a>
-<div class="col-span-2 mt-1 pt-2 border-t border-brand-border/10">
-<p class="text-[9px] text-brand-textMuted font-semibold uppercase tracking-wider px-1 mb-1">Produção & Design</p>
-<div class="grid grid-cols-3 gap-1">
-<a href="../design-identidade/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-palette"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Design e Identidade Visual</p><p class="text-brand-textMuted text-xs">Logotipo, visual e criativos</p></div></a>
-<a href="../edicao-video/" class="mega-service-item" style="background:rgba(217,255,106,.06)"><div class="mega-icon" style="background:rgba(217,255,106,.15)"><i class="fas fa-video"></i></div><div><p class="font-semibold text-brand-primary text-sm mb-0.5">Edição de Vídeo</p><p class="text-brand-textMuted text-xs">Reels, shorts e anúncios</p></div></a>
-<a href="../sites-paginas/" class="mega-service-item"><div class="mega-icon"><i class="fas fa-globe"></i></div><div><p class="font-semibold text-brand-textPrimary text-sm mb-0.5">Sites, Páginas e Checkouts</p><p class="text-brand-textMuted text-xs">Landing pages e conversão</p></div></a>
-</div>
-</div>
-<div class="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1"><a href="../../#servicos" class="flex items-center gap-2 text-xs text-brand-primary font-semibold"><i class="fas fa-grid-2 text-[10px]"></i> Ver todos os serviços <i class="fas fa-arrow-right text-[10px]"></i></a></div>
-</div>
-
-              <div class="bg-brand-bg/60 border-l border-brand-primary/10 p-6 flex flex-col justify-between">
-                <div><p class="text-[10px] font-semibold text-brand-primary uppercase tracking-wider mb-2">Diagnóstico Grátis</p><h4 class="font-bold text-brand-textPrimary text-sm leading-snug mb-3">Descubra onde seu marketing está perdendo dinheiro</h4><p class="text-brand-textMuted text-xs leading-relaxed mb-5">Auditoria completa em 48h.</p><button onclick="abrirPopup()" class="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition"><span class="px-4 py-2 text-xs font-bold text-brand-bg">Agendar agora</span><span class="btn-icon w-7 h-7 rounded-full bg-brand-bg/20 flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-[10px]"></i></span></button></div>
-                <div class="mt-6 pt-5 border-t border-brand-border/10 space-y-2"><div class="flex items-center gap-2 text-xs text-brand-textMuted"><i class="fas fa-check text-brand-primary text-[10px]"></i> +150 clientes atendidos</div><div class="flex items-center gap-2 text-xs text-brand-textMuted"><i class="fas fa-check text-brand-primary text-[10px]"></i> R$47M gerenciados</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="../../#cases" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-trophy"></i> Cases</a>
-      <a href="../../#pricing" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-tag"></i> Planos</a>
-      <a href="../../#contato" class="nav-link hover:text-brand-primary transition"><i class="nav-icon fas fa-message"></i> Contato</a>
-    </nav>
-    <div class="flex items-center gap-3">
-      <button onclick="abrirPopup()" class="split-btn hidden md:inline-flex items-center rounded-full bg-brand-bg/40 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition"><span class="px-5 py-2.5 text-sm font-semibold">Fale Conosco</span><span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-xs"></i></span></button>
-            <!-- Language Switcher -->
-      <div class="hidden md:flex items-center gap-0.5">
-        <button data-lang="pt" onclick="setLang('pt')" class="lang-btn lang-active">PT</button>
-        <span class="lang-sep">|</span>
-        <button data-lang="en" onclick="setLang('en')" class="lang-btn">EN</button>
-        <span class="lang-sep">|</span>
-        <button data-lang="es" onclick="setLang('es')" class="lang-btn">ES</button>
-      </div>
-<button id="menu-toggle" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-brand-textSecondary"><i class="fas fa-bars text-sm"></i></button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="lg:hidden border-t border-brand-border/10">
-    <nav class="container mx-auto px-6 py-4 flex flex-col gap-1 text-sm font-medium">
-      <a href="../../" class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60"><i class="nav-icon fas fa-house w-4 text-center"></i> Home</a>
-      <a href="../../#sobre" class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60"><i class="nav-icon fas fa-users w-4 text-center"></i> Sobre</a>
-      <div>
-        <button onclick="toggleMobServices()" class="nav-link w-full text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60 justify-between">
-          <span class="flex items-center gap-1.5"><i class="nav-icon fas fa-briefcase w-4 text-center"></i> Serviços</span>
-          <i id="mob-services-chevron" class="fas fa-chevron-down text-[10px] opacity-60"></i>
-        </button>
-        <div id="mob-services-sub">
-          <div class="border-l border-brand-primary/20 pl-4 ml-4 space-y-1 py-2">
-            <a href="../trafego-pago/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-chart-bar text-brand-primary text-xs w-4 text-center"></i> Tráfego Pago</a>
-<a href="../automacao/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-robot text-brand-primary text-xs w-4 text-center"></i> Automação de Marketing</a>
-<a href="../social-media/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-share-nodes text-brand-primary text-xs w-4 text-center"></i> Social Media</a>
-<a href="../email-marketing/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-envelope-open-text text-brand-primary text-xs w-4 text-center"></i> E-mail Marketing</a>
-<a href="../crm-funis/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-filter text-brand-primary text-xs w-4 text-center"></i> CRM & Funis</a>
-<a href="../seo-conteudo/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-magnifying-glass-chart text-brand-primary text-xs w-4 text-center"></i> SEO & Conteúdo</a>
-<a href="../design-identidade/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-palette text-brand-primary text-xs w-4 text-center"></i> Design e Identidade Visual</a>
-<a href="../edicao-video/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-video text-brand-primary text-xs w-4 text-center"></i> Edição de Vídeo</a>
-<a href="../sites-paginas/" class="flex items-center gap-2.5 py-2 text-brand-textSecondary hover:text-brand-primary transition"><i class="fas fa-globe text-brand-primary text-xs w-4 text-center"></i> Sites, Páginas e Checkouts</a>
-
-          </div>
-        </div>
-      </div>
-      <a href="../../#cases" class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60"><i class="nav-icon fas fa-trophy w-4 text-center"></i> Cases</a>
-      <a href="../../#pricing" class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60"><i class="nav-icon fas fa-tag w-4 text-center"></i> Planos</a>
-      <a href="../../#contato" class="nav-link hover:text-brand-primary transition py-2.5 px-3 rounded-xl hover:bg-brand-surface/60"><i class="nav-icon fas fa-message w-4 text-center"></i> Contato</a>
-      <button onclick="abrirPopup()" class="mt-3 w-full split-btn inline-flex items-center justify-between rounded-full border border-brand-primary/40 p-1">
-        <span class="px-5 py-2.5 text-sm font-semibold flex-1 text-center">Solicitar Proposta</span>
-        <span class="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center"><i class="fas fa-arrow-right text-brand-bg text-xs"></i></span>
-      </button>
-      <!-- Mobile Lang -->
-      <div class="flex items-center justify-center gap-1 py-3 border-t border-brand-border/10 mt-1">
-        <button data-lang="pt" onclick="setLang('pt');closeMobileMenu()" class="lang-btn lang-active px-3 py-1.5">PT</button>
-        <span class="lang-sep">|</span>
-        <button data-lang="en" onclick="setLang('en');closeMobileMenu()" class="lang-btn px-3 py-1.5">EN</button>
-        <span class="lang-sep">|</span>
-        <button data-lang="es" onclick="setLang('es');closeMobileMenu()" class="lang-btn px-3 py-1.5">ES</button>
-      </div>
-    </nav>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <!-- BREADCRUMB -->
 <div class="container mx-auto px-6 max-w-site py-4">
-  <p class="text-brand-textMuted text-xs flex items-center gap-2"><a href="../../" class="hover:text-brand-primary transition">Home</a><i class="fas fa-chevron-right text-[9px]"></i><a href="../../#servicos" class="hover:text-brand-primary transition">Serviços</a><i class="fas fa-chevron-right text-[9px]"></i><span class="text-brand-primary">Edição de Vídeo</span></p>
+  <p class="text-brand-textMuted text-xs flex items-center gap-2"><a href="/" class="hover:text-brand-primary transition">Home</a><i class="fas fa-chevron-right text-[9px]"></i><a href="/#servicos" class="hover:text-brand-primary transition">Serviços</a><i class="fas fa-chevron-right text-[9px]"></i><span class="text-brand-primary">Edição de Vídeo</span></p>
 </div>
 
 <!-- HERO -->
@@ -182,10 +76,10 @@
 <section class="py-16">
   <div class="container mx-auto px-6 max-w-site">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="bg-brand-surface border border-brand-primary/20 glow-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="0"><p class="stat-stroke text-5xl mb-2">48h</p><p class="text-brand-textPrimary font-semibold text-sm">Entrega média</p><p class="text-brand-textMuted text-xs mt-1">por vídeo editado</p></div>
-<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="80"><p class="stat-stroke text-5xl mb-2">4K</p><p class="text-brand-textPrimary font-semibold text-sm">Suporte</p><p class="text-brand-textMuted text-xs mt-1">qualquer resolução</p></div>
-<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="160"><p class="stat-stroke text-5xl mb-2">100%</p><p class="text-brand-textPrimary font-semibold text-sm">Exclusividade</p><p class="text-brand-textMuted text-xs mt-1">sem templates genéricos</p></div>
-<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="240"><p class="stat-stroke text-5xl mb-2">3+</p><p class="text-brand-textPrimary font-semibold text-sm">Plataformas</p><p class="text-brand-textMuted text-xs mt-1">formatos adaptados por entrega</p></div>
+      <div class="bg-brand-surface border border-brand-primary/20 glow-card rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="0"><p class="stat-fill text-5xl mb-2">48h</p><p class="text-brand-textPrimary font-semibold text-sm">Entrega média</p><p class="text-brand-textMuted text-xs mt-1">por vídeo editado</p></div>
+<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="80"><p class="stat-fill text-5xl mb-2">4K</p><p class="text-brand-textPrimary font-semibold text-sm">Suporte</p><p class="text-brand-textMuted text-xs mt-1">qualquer resolução</p></div>
+<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="160"><p class="stat-fill text-5xl mb-2">100%</p><p class="text-brand-textPrimary font-semibold text-sm">Exclusividade</p><p class="text-brand-textMuted text-xs mt-1">sem templates genéricos</p></div>
+<div class="bg-brand-surface border border-brand-border/15 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="240"><p class="stat-fill text-5xl mb-2">3+</p><p class="text-brand-textPrimary font-semibold text-sm">Plataformas</p><p class="text-brand-textMuted text-xs mt-1">formatos adaptados por entrega</p></div>
 
     </div>
   </div>
@@ -267,49 +161,17 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="mx-4 md:mx-6 mb-4 rounded-t-3xl border border-b-0 border-brand-primary/15 bg-brand-surface pt-10 pb-6 px-8">
-  <div class="gradient-rule mb-6"></div>
-  <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-brand-textMuted">
-    <a href="../../"><img src="../../assets/logoNexo.svg" alt="Nexo Digital" class="h-8 w-auto mb-3 md:mb-0"></a>
-    <p>© 2026 Nexo Digital. Todos os direitos reservados.</p>
-    <div class="flex gap-6"><a href="../../" class="hover:text-brand-primary transition">Home</a><a href="../../#contato" class="hover:text-brand-primary transition">Contato</a></div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<div id="site-popup"></div>
+<div id="site-mobile-float"></div>
+<div id="site-cookie-banner"></div>
 
-<!-- POPUP -->
-<div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
-  <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent"></div>
-    <button onclick="fecharPopup()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-bg/50 flex items-center justify-center text-brand-textMuted hover:text-brand-primary transition"><i class="fas fa-times text-xs"></i></button>
-    <div class="text-center mb-6"><p class="text-brand-primary font-semibold text-xs mb-1">Vamos conversar</p><h3 class="font-bold text-2xl text-brand-textPrimary mb-1">Solicite uma proposta</h3><p class="text-sm text-brand-textMuted">Retorno em até 1 dia útil.</p></div>
-    <form id="form-captura" class="space-y-4">
-      <input type="text" placeholder="Nome completo" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition">
-      <input type="email" placeholder="E-mail" required class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition">
-      <input type="tel" placeholder="(11) 99999-9999" class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary transition">
-      <button type="submit" class="w-full bg-brand-primary text-brand-bg font-bold text-sm rounded-full py-4 hover:bg-brand-primaryHover transition">Enviar Solicitação</button>
-    </form>
-  </div>
-</div>
-
+<!-- ================================================================
+     SCRIPTS
+================================================================ -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({duration:650,once:true,offset:60});
-  const popup=document.getElementById('popup-captura');
-  function abrirPopup(){popup.classList.remove('hidden');popup.classList.add('flex');document.body.style.overflow='hidden';}
-  function fecharPopup(){popup.classList.add('hidden');popup.classList.remove('flex');document.body.style.overflow='';}
-  popup.addEventListener('click',e=>{if(e.target===popup)fecharPopup();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharPopup();});
-  document.getElementById('menu-toggle').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-  window.addEventListener('scroll',()=>document.getElementById('main-header').classList.toggle('scrolled',window.scrollY>40));
-  document.getElementById('form-captura').addEventListener('submit',e=>{e.preventDefault();fecharPopup();});
-  function toggleFaq(el){const o=el.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(f=>f.classList.remove('open'));if(!o)el.classList.add('open');}
-  function toggleMobServices(){
-    const sub=document.getElementById('mob-services-sub');
-    const ch=document.getElementById('mob-services-chevron');
-    sub.classList.toggle('open'); ch.classList.toggle('open');
-  }
-</script>
-<script src="../../js/translations.js"></script>
-<script src="../../js/i18n.js"></script>
+<script src="/js/translations.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

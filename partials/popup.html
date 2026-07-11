@@ -1,0 +1,50 @@
+<div id="popup-captura"
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+  aria-hidden="true">
+  <div class="relative bg-brand-surface border border-brand-primary/30 rounded-2xl shadow-2xl max-w-md w-full p-8 md:p-10 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent rounded-t-2xl"></div>
+
+    <button type="button" onclick="fecharPopup()" aria-label="Fechar"
+      class="absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-bg/50 flex items-center justify-center text-brand-textMuted hover:text-brand-primary transition">
+      <i class="fas fa-times text-xs"></i>
+    </button>
+
+    <div class="text-center mb-6">
+      <div class="inline-flex w-12 h-12 rounded-xl items-center justify-center bg-brand-primary/10 border border-brand-primary/30 mb-4">
+        <i class="fas fa-rocket text-brand-primary"></i>
+      </div>
+      <p class="text-brand-primary font-semibold text-xs mb-1" data-i18n="popup.eyebrow">Vamos conversar</p>
+      <h3 class="font-bold text-2xl text-brand-textPrimary mb-1" data-i18n="popup.title">Solicite uma proposta</h3>
+      <p class="text-sm text-brand-textMuted" data-i18n="popup.desc">Nossa equipe retorna em até 1 dia útil.</p>
+    </div>
+
+    <form id="form-captura" class="space-y-4">
+      <input type="text" id="lead-nome" name="nome" placeholder="Nome completo" data-i18n-ph="popup.ph_name" required
+        class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+
+      <input type="email" id="lead-email" name="email" placeholder="E-mail" data-i18n-ph="popup.ph_email" required
+        class="w-full bg-brand-bg border border-brand-border/25 rounded-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+
+      <div class="flex items-stretch">
+        <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-brand-border/25 bg-brand-bg text-brand-textMuted text-sm">+55</span>
+        <input type="tel" id="lead-telefone" name="telefone" placeholder="(11) 99999-9999" required maxlength="15"
+          class="w-full bg-brand-bg border border-brand-border/25 rounded-r-xl px-4 py-3 text-sm text-brand-textPrimary placeholder:text-brand-textMuted focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition">
+      </div>
+
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_term" name="utm_term">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_content" name="utm_content">
+      <input type="hidden" id="url" name="url">
+
+      <p class="error-msg text-red-400 text-xs hidden">Informe o DDD e o número completo.</p>
+
+      <button type="submit"
+        class="btn-submit w-full split-btn flex items-center justify-center gap-3 bg-brand-primary text-brand-bg font-bold text-sm rounded-full py-4 hover:bg-brand-primaryHover transition">
+        <span data-i18n="popup.submit">Enviar Solicitação</span>
+      </button>
+      <p class="text-center text-brand-textMuted text-xs" data-i18n="popup.privacy">Sem spam. Seus dados estão seguros.</p>
+    </form>
+  </div>
+</div>

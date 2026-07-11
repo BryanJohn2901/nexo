@@ -47,8 +47,9 @@
       if (val !== undefined) el.setAttribute('aria-label', val);
     });
 
-    /* page title */
-    if (t.meta && t.meta.title) document.title = t.meta.title;
+    /* page title — only the homepage has a translated meta.title; other pages keep their own <title> */
+    var isHome = location.pathname === '/' || location.pathname === '/index.html';
+    if (isHome && t.meta && t.meta.title) document.title = t.meta.title;
 
     /* html lang */
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
@@ -69,5 +70,10 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     applyLang(detectLang());
+  });
+
+  /* header/footer/cookie-banner are injected async by site.js — reapply once they land */
+  document.addEventListener('nexo:partials-loaded', function () {
+    applyLang(window.__nexoLang || detectLang());
   });
 })();
