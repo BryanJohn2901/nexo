@@ -201,12 +201,21 @@
 
       <div class="relative" data-aos="fade-left" data-aos-delay="100">
         <div class="grid grid-cols-2 gap-4">
-          <img src="/assets/01.webp"
-               alt="Time Nexo Digital" class="rounded-2xl w-full h-48 object-cover col-span-2">
-          <img src="/assets/02.webp"
-               alt="Estratégia" class="rounded-2xl w-full h-36 object-cover">
-          <img src="/assets/03.webp"
-               alt="Execução" class="rounded-2xl w-full h-36 object-cover">
+          <picture class="col-span-2">
+            <source srcset="/assets/problem-team.webp" type="image/webp">
+            <img src="/assets/problem-team.jpg" alt="Time Nexo Digital"
+                 class="rounded-2xl w-full h-48 object-cover" width="1920" height="1000">
+          </picture>
+          <picture>
+            <source srcset="/assets/problem-strategy.webp" type="image/webp">
+            <img src="/assets/problem-strategy.jpg" alt="Estratégia"
+                 class="rounded-2xl w-full h-36 object-cover" width="1920" height="1000">
+          </picture>
+          <picture>
+            <source srcset="/assets/problem-execution.webp" type="image/webp">
+            <img src="/assets/problem-execution.jpg" alt="Execução"
+                 class="rounded-2xl w-full h-36 object-cover" width="1920" height="1000">
+          </picture>
         </div>
         <div class="photo-overlap-card">
           <p class="font-bold text-brand-textPrimary text-sm mb-2" data-i18n="problem.card">Conexão entre as partes, não peças soltas.</p>
@@ -277,8 +286,11 @@
 ================================================================ -->
 <section class="py-12 md:py-16 px-4 md:px-6">
   <div class="relative rounded-3xl overflow-hidden min-h-[420px] flex items-center" data-aos="fade-up">
-    <img src="/assets/04.webp"
-         alt="Diagnóstico Nexo" class="absolute inset-0 w-full h-full object-cover">
+    <picture class="absolute inset-0 block w-full h-full">
+      <source srcset="/assets/diag-bg.webp" type="image/webp">
+      <img src="/assets/diag-bg.jpg" alt="Diagnóstico Nexo"
+           class="w-full h-full object-cover" width="1920" height="1000">
+    </picture>
     <div class="absolute inset-0 bg-brand-bg/75"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-brand-bg/99 via-brand-bg/90 to-brand-bg/50"></div>
     <div class="relative z-10 container mx-auto px-8 md:px-16 py-16">
