@@ -7,6 +7,7 @@ import { ServiceHeroFX } from "@/components/ServiceHeroFX";
 import { Reveal } from "@/components/Reveal";
 import { Faq } from "@/components/Faq";
 import { PopupButton } from "@/components/PopupButton";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -61,6 +62,8 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* STATS */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-site">
@@ -81,6 +84,8 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* FERRAMENTAS */}
       <section className="py-16 bg-brand-surface/20">
         <div className="container mx-auto px-6 max-w-site">
@@ -99,6 +104,8 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ENTREGAS */}
       <section className="py-20">
@@ -147,19 +154,24 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* FAQ */}
       {service.faq && service.faq.length > 0 && (
-        <section className="py-20 bg-brand-surface/20">
-          <div className="container mx-auto px-6 max-w-[860px]">
-            <Reveal type="fade-up" className="text-center mb-12">
-              <p className="eyebrow justify-center"><i className="fas fa-circle-dot text-xs" /> FAQ</p>
-              <h2 className="text-fade text-3xl md:text-4xl font-extrabold tracking-tight">{service.faqH2}</h2>
-            </Reveal>
-            <Reveal type="fade-up" delay={100}>
-              <Faq items={service.faq.map((f) => ({ q: f.q, a: f.a }))} />
-            </Reveal>
-          </div>
-        </section>
+        <>
+          <section className="py-20 bg-brand-surface/20">
+            <div className="container mx-auto px-6 max-w-[860px]">
+              <Reveal type="fade-up" className="text-center mb-12">
+                <p className="eyebrow justify-center"><i className="fas fa-circle-dot text-xs" /> FAQ</p>
+                <h2 className="text-fade text-3xl md:text-4xl font-extrabold tracking-tight">{service.faqH2}</h2>
+              </Reveal>
+              <Reveal type="fade-up" delay={100}>
+                <Faq items={service.faq.map((f) => ({ q: f.q, a: f.a }))} />
+              </Reveal>
+            </div>
+          </section>
+          <SectionDivider />
+        </>
       )}
 
       {/* CTA FINAL */}

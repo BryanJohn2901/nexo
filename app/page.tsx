@@ -4,6 +4,7 @@ import { T, THtml } from "@/components/i18n/T";
 import { Reveal } from "@/components/Reveal";
 import { Faq } from "@/components/Faq";
 import { PopupButton } from "@/components/PopupButton";
+import { SectionDivider } from "@/components/SectionDivider";
 
 const PARTNERS = [
   { icon: "fa-google", brand: true, label: "Google Ads" },
@@ -182,6 +183,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           LOGO STRIP
       ================================================================ */}
@@ -196,6 +199,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           SEÇÃO 1 — O PROBLEMA
@@ -229,6 +234,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           SEÇÃO 2 — POSICIONAMENTO
@@ -276,6 +283,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           SEÇÃO 3 — DIAGNÓSTICO ANTES DA EXECUÇÃO
       ================================================================ */}
@@ -306,6 +315,8 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           SEÇÃO 4 — POR QUE ISSO IMPORTA
@@ -366,6 +377,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           BANNER CTA
       ================================================================ */}
@@ -385,6 +398,8 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           SERVIÇOS INDIVIDUAIS
@@ -423,6 +438,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           COMO TRABALHAMOS
       ================================================================ */}
@@ -447,6 +464,8 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           PLANOS NEXO DIGITAL
@@ -584,6 +603,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           ADD-ONS / O QUE TORNA A NEXO DIFERENTE
       ================================================================ */}
@@ -620,6 +641,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           PRA QUEM É / PRA QUEM NÃO É
@@ -665,6 +688,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ================================================================
           FAQ
       ================================================================ */}
@@ -696,6 +721,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ================================================================
           CTA FINAL
