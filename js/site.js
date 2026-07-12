@@ -231,3 +231,90 @@ function handleNewsletter(e) {
 
 /* ── AOS ── */
 if (window.AOS) AOS.init({ duration: 650, once: true, offset: 60 });
+
+/* ── SCROLL PROGRESS BAR ── */
+(function initScrollProgress() {
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.appendChild(bar);
+  const update = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ── CUSTOM CURSOR + MAGNETIC BUTTONS + CLICK SPARKS (desktop, fine pointer, motion allowed) ── */
+(function initCursorFX() {
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fine || reduced) return;
+
+  const html = document.documentElement;
+  const dot = document.createElement('div'); dot.id = 'cursor-dot';
+  const ring = document.createElement('div'); ring.id = 'cursor-ring';
+  document.body.append(dot, ring);
+  html.classList.add('has-custom-cursor');
+
+  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+  let rx = mx, ry = my;
+  const HOVER_SEL = 'a, button, .card-lift, .social-icon, input, textarea, select, [role="button"], label';
+  const MAGNET_SEL = '.split-btn, .social-icon';
+  const MAGNET_RADIUS = 90;
+
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    html.classList.add('cursor-active');
+    dot.style.transform = `translate(${mx}px, ${my}px)`;
+  });
+  window.addEventListener('mouseleave', () => html.classList.remove('cursor-active'));
+  document.addEventListener('mousedown', () => html.classList.add('cursor-down'));
+  document.addEventListener('mouseup', () => html.classList.remove('cursor-down'));
+
+  document.addEventListener('mouseover', e => { if (e.target.closest(HOVER_SEL)) html.classList.add('cursor-hover'); });
+  document.addEventListener('mouseout', e => { if (e.target.closest(HOVER_SEL)) html.classList.remove('cursor-hover'); });
+
+  (function loop() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+
+    document.querySelectorAll(MAGNET_SEL).forEach(el => {
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const dx = mx - cx, dy = my - cy;
+      const dist = Math.hypot(dx, dy);
+      if (dist < MAGNET_RADIUS) {
+        const pull = (1 - dist / MAGNET_RADIUS) * 12;
+        el.style.transform = `translate(${(dx / dist || 0) * pull}px, ${(dy / dist || 0) * pull}px)`;
+      } else if (el.style.transform) {
+        el.style.transform = '';
+      }
+    });
+
+    requestAnimationFrame(loop);
+  })();
+
+  document.addEventListener('click', e => {
+    const target = e.target.closest('.split-btn');
+    if (!target) return;
+    const r = target.getBoundingClientRect();
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    const n = 10;
+    for (let i = 0; i < n; i++) {
+      const angle = (Math.PI * 2 * i) / n + Math.random() * 0.4;
+      const dist = 32 + Math.random() * 28;
+      const spark = document.createElement('span');
+      spark.className = 'cursor-spark';
+      spark.style.setProperty('--sx', Math.cos(angle) * dist + 'px');
+      spark.style.setProperty('--sy', Math.sin(angle) * dist + 'px');
+      spark.style.left = cx + 'px';
+      spark.style.top = cy + 'px';
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 650);
+    }
+  });
+})();
