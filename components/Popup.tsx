@@ -207,7 +207,7 @@ function Popup({
           />
 
           <div className="flex items-stretch">
-            <span className="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-brand-border/25 bg-brand-bg text-brand-textMuted text-sm">
+            <span className="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-brand-border/25 bg-brand-primary text-brand-bg font-bold text-sm">
               +55
             </span>
             <input
