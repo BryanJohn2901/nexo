@@ -150,8 +150,8 @@ export default function Home() {
             </p>
 
             <h1 className="hero-line-2 font-extrabold tracking-tight leading-[1.1] mb-6" style={{ fontSize: "clamp(2rem,3.8vw,3.75rem)" }}>
-              <span className="text-fade block whitespace-nowrap"><T k="hero.h1_1" /></span>
-              <span className="block whitespace-nowrap" style={{ WebkitTextFillColor: "#D9FF6A", color: "#D9FF6A" }}><T k="hero.h1_2" /></span>
+              <span className="text-fade block md:whitespace-nowrap"><T k="hero.h1_1" /></span>
+              <span className="block md:whitespace-nowrap" style={{ WebkitTextFillColor: "#D9FF6A", color: "#D9FF6A" }}><T k="hero.h1_2" /></span>
             </h1>
 
             <THtml k="hero.desc" as="p" className="hero-line-3 text-brand-textSecondary text-lg leading-relaxed max-w-lg mb-8" />
