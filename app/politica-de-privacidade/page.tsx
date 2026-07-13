@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PopupButton } from "@/components/PopupButton";
+import { ServiceHeroFX } from "@/components/ServiceHeroFX";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade | Nexo Digital",
@@ -19,8 +20,9 @@ export default function PrivacyPolicyPage() {
         </p>
       </div>
 
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto px-6 max-w-site-md">
+      <section className="relative mx-4 md:mx-6 mb-6 rounded-3xl overflow-hidden hero-bg flex items-center py-14 md:py-20">
+        <ServiceHeroFX variant="rich" />
+        <div className="container mx-auto max-w-site px-8 md:px-16 relative z-10">
           <p className="eyebrow"><i className="fas fa-shield-halved text-xs" /> LGPD — Lei nº 13.709/2018</p>
           <h1 className="text-fade text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Política de Privacidade</h1>
           <p className="text-brand-textSecondary leading-relaxed">Última atualização: 11 de julho de 2026.</p>
