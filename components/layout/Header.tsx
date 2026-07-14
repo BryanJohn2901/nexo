@@ -177,7 +177,7 @@ export function Header() {
                         <p className="text-brand-textMuted text-xs leading-relaxed mb-5"><T k="nav.mega_diag_desc" /></p>
                         <button
                           onClick={() => {
-                            openPopup();
+                            openPopup("mega-diag");
                             closeMega();
                           }}
                           className="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition"
@@ -232,7 +232,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => openPopup()}
+              onClick={() => openPopup("nav")}
               className="split-btn hidden md:inline-flex items-center rounded-full bg-brand-bg/40 border border-brand-primary/30 p-1 hover:border-brand-primary/60 transition"
             >
               <span className="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary"><T k="nav.cta" /></span>
@@ -322,7 +322,7 @@ export function Header() {
 
           <button
             onClick={() => {
-              openPopup();
+              openPopup("nav-mobile");
               closeMobile();
             }}
             className="mt-3 w-full split-btn inline-flex items-center justify-between rounded-full border border-brand-primary/40 p-1"

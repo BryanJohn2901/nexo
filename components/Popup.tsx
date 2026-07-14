@@ -41,6 +41,26 @@ const WA_MESSAGES: Record<string, string> = {
     "Olá! Vim da página de Social Media da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
   "trafego-pago":
     "Olá! Vim da página de Tráfego Pago da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  hero:
+    "Olá! Vim do site da Nexo Digital e quero começar agora. Podemos conversar?",
+  problema:
+    "Olá! Vim do site da Nexo Digital, vi a parte sobre os problemas que vocês resolvem e quero entender como podem me ajudar. Podemos conversar?",
+  diagnostico:
+    "Olá! Vim do site da Nexo Digital e quero agendar meu diagnóstico gratuito. Podemos conversar?",
+  banner:
+    "Olá! Vim do site da Nexo Digital e quero saber mais sobre como vocês podem me ajudar a crescer. Podemos conversar?",
+  addons:
+    "Olá! Vim do site da Nexo Digital e quero saber mais sobre add-ons e serviços fora do escopo padrão. Podemos conversar?",
+  final:
+    "Olá! Vim do site da Nexo Digital e quero dar o próximo passo. Podemos conversar?",
+  "mega-diag":
+    "Olá! Vim pelo menu do site da Nexo Digital e quero agendar meu diagnóstico gratuito. Podemos conversar?",
+  nav:
+    "Olá! Vim pelo menu do site da Nexo Digital e quero falar com vocês. Podemos conversar?",
+  "nav-mobile":
+    "Olá! Vim pelo menu mobile do site da Nexo Digital e quero falar com vocês. Podemos conversar?",
+  "mobile-float":
+    "Olá! Vim pelo botão do site da Nexo Digital e quero falar com vocês. Podemos conversar?",
 };
 
 const WA_URLS: Record<string, string> = Object.fromEntries(

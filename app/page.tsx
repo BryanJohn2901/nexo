@@ -157,7 +157,7 @@ export default function Home() {
             <THtml k="hero.desc" as="p" className="hero-line-3 text-brand-textSecondary text-lg leading-relaxed max-w-lg mb-8" />
 
             <div className="hero-line-4 flex flex-wrap items-center gap-4 mb-10">
-              <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+              <PopupButton plan="hero" className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
                 <span className="px-6 py-2.5 text-sm font-bold text-brand-bg"><T k="hero.cta1" /></span>
                 <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
                   <i className="fas fa-arrow-right text-brand-bg text-sm" />
@@ -226,7 +226,7 @@ export default function Home() {
               </div>
               <div className="photo-overlap-card">
                 <p className="font-bold text-brand-textPrimary text-sm mb-2"><T k="problem.card" /></p>
-                <PopupButton as="a" className="text-brand-primary text-xs font-semibold inline-flex items-center gap-1 cursor-pointer">
+                <PopupButton as="a" plan="problema" className="text-brand-primary text-xs font-semibold inline-flex items-center gap-1 cursor-pointer">
                   <span><T k="problem.card_link" /></span> <i className="fas fa-arrow-right text-xs" />
                 </PopupButton>
               </div>
@@ -306,7 +306,7 @@ export default function Home() {
               <div className="check-item"><span className="check-dot"><i className="fas fa-check text-[9px] text-brand-primary" /></span> <span className="text-white/80"><T k="diag.c5" /></span></div>
             </div>
             <THtml k="diag.goal" as="p" className="text-white/75 mb-8" />
-            <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+            <PopupButton plan="diagnostico" className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
               <span className="px-6 py-2.5 text-sm font-bold text-brand-bg"><T k="diag.cta" /></span>
               <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
                 <i className="fas fa-arrow-right text-brand-bg text-sm" />
@@ -389,7 +389,7 @@ export default function Home() {
             <THtml k="banner.h2" as="h2" className="text-fade text-3xl md:text-5xl font-extrabold tracking-tight mb-4" />
             <p className="text-brand-textSecondary leading-relaxed mb-3"><span><T k="banner.p1" /></span></p>
             <p className="text-brand-textSecondary leading-relaxed mb-8"><T k="banner.p2" /></p>
-            <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+            <PopupButton plan="banner" className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
               <span className="px-6 py-2.5 text-sm font-bold text-brand-bg"><T k="banner.cta" /></span>
               <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
                 <i className="fas fa-arrow-right text-brand-bg text-sm" />
@@ -617,7 +617,7 @@ export default function Home() {
               <p className="text-brand-textSecondary leading-relaxed mb-4">
                 Sem problema, só não vamos chamar projeto novo de &quot;ajustezinho&quot;. Tudo fora do escopo contratado entra como add-on, serviço individual ou upgrade: páginas extras, identidade visual, sites institucionais, automações, dashboards, estrutura de lançamento e mais.
               </p>
-              <PopupButton className="split-btn inline-flex items-center rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
+              <PopupButton plan="addons" className="split-btn inline-flex items-center rounded-full border border-brand-primary/40 p-1 hover:border-brand-primary/70 transition">
                 <span className="px-5 py-2.5 text-sm font-semibold text-brand-textPrimary"><T k="addons.cta1" /></span>
                 <span className="btn-icon w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center">
                   <i className="fas fa-arrow-right text-brand-bg text-xs" />
@@ -737,7 +737,7 @@ export default function Home() {
             <THtml k="cta_final.h2" as="h2" className="text-fade text-3xl md:text-4xl font-extrabold mb-3" />
             <p className="text-brand-textSecondary mb-4 leading-relaxed"><span><T k="cta_final.p1" /></span></p>
             <p className="text-brand-textSecondary mb-8 leading-relaxed"><span><T k="cta_final.p2" /></span></p>
-            <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+            <PopupButton plan="final" className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
               <span className="px-8 py-3 text-sm font-bold text-brand-bg"><T k="cta_final.cta" /></span>
               <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center">
                 <i className="fas fa-arrow-right text-brand-bg text-sm" />

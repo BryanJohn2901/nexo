@@ -8,7 +8,7 @@ export function MobileFloat() {
   return (
     <div className="mobile-float lg:hidden">
       <button
-        onClick={() => open()}
+        onClick={() => open("mobile-float")}
         className="split-btn w-full inline-flex items-center justify-between rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition"
       >
         <span className="px-6 py-2.5 text-sm font-bold text-brand-bg flex-1 text-center">
