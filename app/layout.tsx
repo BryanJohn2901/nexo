@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Nexo Digital | Agência de Marketing & Automação",
   description:
     "Conectamos estratégia, dados e automação para escalar negócios. Tráfego pago, CRM, funis e muito mais.",
+  icons: {
+    icon: "/assets/favicon-nexo.svg",
+  },
 };
 
 export default function RootLayout({
