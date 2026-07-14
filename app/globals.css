@@ -266,8 +266,7 @@ body { padding-top: var(--header-h); }
   transition:opacity .25s ease, transform .25s ease, visibility .25s;
   z-index:200;
 }
-.mega-trigger:hover .mega-menu-wrap,
-.mega-trigger:focus-within .mega-menu-wrap { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-trigger.mega-open .mega-menu-wrap { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
 .mega-menu-arrow {
   position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg);
   width:12px; height:12px; background:#222A31;

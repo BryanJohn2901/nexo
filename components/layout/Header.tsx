@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { T } from "@/components/i18n/T";
@@ -72,7 +72,27 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaRef = useRef<HTMLDivElement>(null);
   const { open: openPopup } = usePopup();
+
+  const closeMega = () => setMegaOpen(false);
+
+  useEffect(() => {
+    if (!megaOpen) return;
+    const onOutside = (e: MouseEvent) => {
+      if (megaRef.current && !megaRef.current.contains(e.target as Node)) closeMega();
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMega();
+    };
+    document.addEventListener("click", onOutside);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onOutside);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [megaOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -112,10 +132,20 @@ export function Header() {
               <i className="nav-icon fas fa-users" /> <span><T k="nav.about" /></span>
             </Link>
 
-            <div className="mega-trigger">
-              <button className="nav-link hover:text-brand-primary transition duration-200 cursor-pointer select-none" aria-haspopup="true" aria-expanded="false">
+            <div
+              className={`mega-trigger ${megaOpen ? "mega-open" : ""}`.trim()}
+              ref={megaRef}
+              onMouseEnter={() => setMegaOpen(true)}
+              onMouseLeave={() => setMegaOpen(false)}
+            >
+              <button
+                onClick={() => setMegaOpen((v) => !v)}
+                className="nav-link hover:text-brand-primary transition duration-200 cursor-pointer select-none"
+                aria-haspopup="true"
+                aria-expanded={megaOpen}
+              >
                 <i className="nav-icon fas fa-briefcase" /> <span><T k="nav.services" /></span>
-                <i className="fas fa-chevron-down text-[9px] ml-0.5 opacity-60" />
+                <i className={`fas fa-chevron-down text-[9px] ml-0.5 opacity-60 transition-transform ${megaOpen ? "rotate-180" : ""}`.trim()} />
               </button>
 
               <div className="mega-menu-wrap">
@@ -124,7 +154,7 @@ export function Header() {
                   <div className="grid grid-cols-3">
                     <div className="col-span-2 p-3 grid grid-cols-2 gap-1 content-start">
                       {MEGA_MAIN.map((s) => (
-                        <Link key={s.href} href={s.href} className="mega-service-item">
+                        <Link key={s.href} href={s.href} onClick={closeMega} className="mega-service-item">
                           <div className="mega-icon"><i className={`fas ${s.icon}`} /></div>
                           <div>
                             <p className="font-semibold text-brand-textPrimary text-sm leading-snug mb-0.5">{s.title}</p>
@@ -133,7 +163,7 @@ export function Header() {
                         </Link>
                       ))}
                       <div className="col-span-2 pt-2 px-1 pb-1 border-t border-brand-border/10 mt-1">
-                        <Link href="/#servicos" className="flex items-center gap-2 text-xs text-brand-primary font-semibold hover:gap-3 transition-all duration-200">
+                        <Link href="/#servicos" onClick={closeMega} className="flex items-center gap-2 text-xs text-brand-primary font-semibold hover:gap-3 transition-all duration-200">
                           <i className="fas fa-table-cells text-[10px]" /> <span><T k="nav.see_all" /></span>
                           <i className="fas fa-arrow-right text-[10px]" />
                         </Link>
@@ -146,7 +176,10 @@ export function Header() {
                         <h4 className="font-bold text-brand-textPrimary text-sm leading-snug mb-3"><T k="nav.mega_diag_title" /></h4>
                         <p className="text-brand-textMuted text-xs leading-relaxed mb-5"><T k="nav.mega_diag_desc" /></p>
                         <button
-                          onClick={() => openPopup()}
+                          onClick={() => {
+                            openPopup();
+                            closeMega();
+                          }}
                           className="w-full split-btn inline-flex items-center justify-between rounded-full bg-brand-primary p-1 hover:bg-brand-primaryHover transition"
                         >
                           <span className="px-4 py-2 text-xs font-bold text-brand-bg"><T k="nav.mega_diag_cta" /></span>
@@ -172,7 +205,7 @@ export function Header() {
                     <p className="text-[9px] text-brand-textMuted font-semibold uppercase tracking-wider mb-2 px-1"><T k="nav.mega_label" /></p>
                     <div className="grid grid-cols-3 gap-1">
                       {MEGA_DESIGN.map((s) => (
-                        <Link key={s.href} href={s.href} className="mega-service-item">
+                        <Link key={s.href} href={s.href} onClick={closeMega} className="mega-service-item">
                           <div className="mega-icon"><i className={`fas ${s.icon}`} /></div>
                           <div>
                             <p className="font-semibold text-brand-textPrimary text-sm mb-0.5">{s.title}</p>
