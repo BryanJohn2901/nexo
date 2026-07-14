@@ -52,7 +52,7 @@ export default async function ServicePage({ params }: Props) {
             </h1>
             <p className="hero-line-3 text-brand-textSecondary text-lg leading-relaxed max-w-lg mb-8">{service.heroDesc}</p>
             <div className="hero-line-4 flex flex-wrap gap-4">
-              <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+              <PopupButton plan={service.slug} className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
                 <span className="px-6 py-2.5 text-sm font-bold text-brand-bg">Solicitar Proposta</span>
                 <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center"><i className="fas fa-arrow-right text-brand-bg text-sm" /></span>
               </PopupButton>
@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: Props) {
                 <p className="eyebrow"><i className="fas fa-circle-dot text-xs" /> Próximo Passo</p>
                 <h3 className="font-bold text-xl text-brand-textPrimary mb-4">{service.nextStep.title}</h3>
                 <p className="text-brand-textSecondary text-sm leading-relaxed mb-6">{service.nextStep.desc}</p>
-                <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+                <PopupButton plan={service.slug} className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
                   <span className="px-6 py-2.5 text-sm font-bold text-brand-bg">{service.nextStep.cta}</span>
                   <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center"><i className="fas fa-arrow-right text-brand-bg text-sm" /></span>
                 </PopupButton>
@@ -180,7 +180,7 @@ export default async function ServicePage({ params }: Props) {
           <p className="eyebrow justify-center"><i className="fas fa-circle-dot text-xs" /> {service.finalCta.eyebrow}</p>
           <h2 className="text-fade text-3xl md:text-4xl font-extrabold mb-4">{service.finalCta.h2}</h2>
           <p className="text-brand-textSecondary mb-8 max-w-md mx-auto">{service.finalCta.desc}</p>
-          <PopupButton className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
+          <PopupButton plan={service.slug} className="split-btn inline-flex items-center rounded-full bg-brand-primary p-1.5 hover:bg-brand-primaryHover transition">
             <span className="px-8 py-3 text-sm font-bold text-brand-bg">{service.finalCta.cta}</span>
             <span className="btn-icon w-10 h-10 rounded-full bg-brand-bg/20 flex items-center justify-center"><i className="fas fa-arrow-right text-brand-bg text-sm" /></span>
           </PopupButton>

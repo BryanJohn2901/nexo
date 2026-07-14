@@ -11,16 +11,41 @@ import {
 import { T } from "@/components/i18n/T";
 import { useT } from "@/lib/i18n/useT";
 
-const WA_URLS: Record<string, string> = {
+const WA_PHONE = "5535991661854";
+const waLink = (text: string) => `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+
+const WA_MESSAGES: Record<string, string> = {
   start:
-    "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Start%20%E2%80%94%20organizar%20minha%20presen%C3%A7a%20digital.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F",
+    "Olá! Vim da página de pacotes da Nexo Digital e tenho interesse no Plano Start — organizar minha presença digital. Podemos agendar uma conversa para alinhar os detalhes?",
   growth:
-    "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Growth%20%E2%80%94%20presen%C3%A7a%20digital%20%2B%20p%C3%A1gina%20vendendo.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F",
+    "Olá! Vim da página de pacotes da Nexo Digital e tenho interesse no Plano Growth — presença digital + página vendendo. Podemos agendar uma conversa para alinhar os detalhes?",
   machine:
-    "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Machine%20%E2%80%94%20funil%20completo%20%2B%20tr%C3%A1fego%20pago.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F",
+    "Olá! Vim da página de pacotes da Nexo Digital e tenho interesse no Plano Machine — funil completo + tráfego pago. Podemos agendar uma conversa para alinhar os detalhes?",
   default:
-    "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nexo%20Digital%20e%20quero%20saber%20mais%20sobre%20os%20pacotes%20de%20gest%C3%A3o.%20Pode%20me%20passar%20as%20informa%C3%A7%C3%B5es%3F",
+    "Olá! Vim pelo site da Nexo Digital e quero saber mais sobre os pacotes de gestão. Pode me passar as informações?",
+  "design-identidade":
+    "Olá! Vim da página de Design e Identidade Visual da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "crm-funis":
+    "Olá! Vim da página de CRM & Funis de Vendas da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  automacao:
+    "Olá! Vim da página de Automação de Marketing da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "edicao-video":
+    "Olá! Vim da página de Edição de Vídeo da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "email-marketing":
+    "Olá! Vim da página de E-mail Marketing da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "seo-conteudo":
+    "Olá! Vim da página de SEO & Conteúdo da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "sites-paginas":
+    "Olá! Vim da página de Sites, Páginas e Checkouts da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "social-media":
+    "Olá! Vim da página de Social Media da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
+  "trafego-pago":
+    "Olá! Vim da página de Tráfego Pago da Nexo Digital e tenho interesse no serviço. Podemos agendar uma conversa para alinhar os detalhes?",
 };
+
+const WA_URLS: Record<string, string> = Object.fromEntries(
+  Object.entries(WA_MESSAGES).map(([k, msg]) => [k, waLink(msg)])
+);
 
 const WEBHOOK_URL = "https://hook.us2.make.com/3rn7v0w2fe78jj05qa1h16kkvaj7345h?produto=ND-LP";
 
