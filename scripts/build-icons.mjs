@@ -8,7 +8,7 @@ import path from "node:path";
 // Keep in sync with usage — regenerate via:
 //   grep -rhoP '\bfas\s+fa-[a-z0-9-]+\b' --include="*.tsx" . | grep -oP 'fa-[a-z0-9-]+' | sed 's/^fa-//' | sort -u
 const SOLID = [
-  "arrow-right", "arrow-trend-down", "arrow-trend-up", "at", "bars", "bolt",
+  "arrow-right", "arrow-trend-down", "arrow-trend-up", "arrow-up", "at", "bars", "bolt",
   "briefcase", "bullseye", "calendar", "chart-bar", "chart-line", "chart-pie",
   "check", "chevron-down", "chevron-right", "circle-dot", "circle-play",
   "clapperboard", "code", "cookie-bite", "diagram-project", "envelope",

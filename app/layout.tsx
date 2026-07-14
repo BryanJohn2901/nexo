@@ -8,6 +8,8 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileFloat } from "@/components/layout/MobileFloat";
+import { WhatsAppBubble } from "@/components/layout/WhatsAppBubble";
+import { BackToTop } from "@/components/layout/BackToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -45,6 +47,8 @@ export default function RootLayout({
               {children}
               <Footer />
               <MobileFloat />
+              <WhatsAppBubble />
+              <BackToTop />
               <CursorFX />
               <ScrollProgress />
             </CookieBannerProvider>
