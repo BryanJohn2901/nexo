@@ -18,13 +18,11 @@ const WA_URLS: Record<string, string> = {
     "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Growth%20%E2%80%94%20presen%C3%A7a%20digital%20%2B%20p%C3%A1gina%20vendendo.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F",
   machine:
     "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20da%20p%C3%A1gina%20de%20pacotes%20da%20Nexo%20Digital%20e%20tenho%20interesse%20no%20Plano%20Machine%20%E2%80%94%20funil%20completo%20%2B%20tr%C3%A1fego%20pago.%20Podemos%20agendar%20uma%20conversa%20para%20alinhar%20os%20detalhes%3F",
-  default: "https://wa.me/5535991661854",
+  default:
+    "https://wa.me/5535991661854?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nexo%20Digital%20e%20quero%20saber%20mais%20sobre%20os%20pacotes%20de%20gest%C3%A3o.%20Pode%20me%20passar%20as%20informa%C3%A7%C3%B5es%3F",
 };
 
-// TODO: unconfigured — mirrors the placeholder that shipped on the static
-// site. The form still closes and redirects to WhatsApp regardless of
-// whether this POST succeeds (see handleSubmit), same as before.
-const WEBHOOK_URL = "WEBHOOK_DO_PROJETO";
+const WEBHOOK_URL = "https://hook.us2.make.com/3rn7v0w2fe78jj05qa1h16kkvaj7345h?produto=ND-LP";
 
 type PopupContextValue = { open: (plan?: string) => void };
 const PopupContext = createContext<PopupContextValue>({ open: () => {} });
