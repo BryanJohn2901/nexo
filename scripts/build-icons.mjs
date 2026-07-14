@@ -13,7 +13,7 @@ const SOLID = [
   "check", "chevron-down", "chevron-right", "circle-dot", "circle-play",
   "clapperboard", "code", "cookie-bite", "diagram-project", "envelope",
   "envelope-open-text", "face-frown-open", "faucet-drip", "film", "filter",
-  "globe", "house", "location-dot", "lock", "magnifying-glass",
+  "globe", "house", "lock", "magnifying-glass",
   "magnifying-glass-chart", "map", "message", "palette", "pen-nib",
   "pen-ruler", "photo-film", "plus", "robot", "rocket", "route",
   "share-nodes", "shield-halved", "shop", "sliders", "spinner",
@@ -22,7 +22,7 @@ const SOLID = [
 ];
 
 const BRANDS = [
-  "figma", "google", "hubspot", "instagram", "linkedin", "linkedin-in",
+  "figma", "google", "hubspot", "instagram", "linkedin",
   "mailchimp", "meta", "salesforce", "shopify", "tiktok", "whatsapp",
   "wordpress", "youtube",
 ];

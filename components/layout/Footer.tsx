@@ -58,29 +58,8 @@ export function Footer() {
           <div>
             <h6 className="font-bold text-brand-textPrimary mb-4 text-sm"><T k="footer.contact_title" /></h6>
             <p className="text-brand-textMuted text-sm mb-1 flex items-center gap-2">
-              <i className="fas fa-envelope text-brand-primary text-xs" /> contato@nexodigital.com.br
+              <i className="fab fa-whatsapp text-brand-primary text-xs" /> +55 (35) 99166-1854
             </p>
-            <p className="text-brand-textMuted text-sm mb-1 flex items-center gap-2">
-              <i className="fab fa-whatsapp text-brand-primary text-xs" /> +55 (11) 99999-9999
-            </p>
-            <p className="text-brand-textMuted text-sm mb-6 flex items-center gap-2">
-              <i className="fas fa-location-dot text-brand-primary text-xs" /> São Paulo, SP
-            </p>
-            <h6 className="font-bold text-brand-textPrimary mb-3 text-sm"><T k="footer.social" /></h6>
-            <div className="flex gap-2">
-              <a href="#" aria-label="Instagram" className="social-icon w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary">
-                <i className="fab fa-instagram text-xs" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="social-icon w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary">
-                <i className="fab fa-linkedin-in text-xs" />
-              </a>
-              <a href="#" aria-label="YouTube" className="social-icon w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary">
-                <i className="fab fa-youtube text-xs" />
-              </a>
-              <a href="#" aria-label="TikTok" className="social-icon w-9 h-9 rounded-full bg-brand-primary/10 border border-brand-primary/25 flex items-center justify-center text-brand-primary">
-                <i className="fab fa-tiktok text-xs" />
-              </a>
-            </div>
           </div>
         </div>
 
